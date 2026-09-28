@@ -54,44 +54,51 @@
     justify-self: start;
 }
 
-/* Logo R */
+/* Nouveau logo R.Digital */
 
 .header__logo {
     display: grid;
     place-items: center;
 
-    width: 37px;
-    height: 37px;
+    width: 40px;
+    height: 40px;
 
     flex-shrink: 0;
 
-    color: #ffffff;
+    padding: 0;
 
-    font-size: 1rem;
-    font-weight: 850;
-    font-style: italic;
+    background: transparent;
 
-    background:
-        linear-gradient(135deg,
-            #2492ff,
-            #1268ff);
+    border-radius: 50%;
 
-    border-radius: 9px;
+    overflow: hidden;
 
-    box-shadow:
-        0 8px 22px rgba(18, 104, 255, 0.22);
+    filter:
+        drop-shadow(0 7px 12px rgba(18, 104, 255, 0.14));
 
     transition:
         transform var(--transition-normal),
-        box-shadow var(--transition-normal);
+        filter var(--transition-normal);
+}
+
+.header__logo-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    border-radius: 50%;
 }
 
 .header__brand:hover .header__logo {
     transform:
-        translateY(-2px);
+        translateY(-2px) scale(1.03);
 
-    box-shadow:
-        0 11px 27px rgba(18, 104, 255, 0.28);
+    filter:
+        drop-shadow(0 9px 15px rgba(18, 104, 255, 0.2));
 }
 
 /* R DIGITAL */
@@ -697,10 +704,8 @@
 
 @media (max-width: 600px) {
     .header__logo {
-        width: 35px;
-        height: 35px;
-
-        font-size: 0.95rem;
+        width: 37px;
+        height: 37px;
     }
 
     .header__brand-text {

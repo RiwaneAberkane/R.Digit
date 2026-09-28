@@ -9,6 +9,8 @@ import {
     X,
 } from 'lucide-react';
 
+import logoRDigital from '../../assets/images/logo-rdigital.png';
+
 import './Header.css';
 
 const navigation = [
@@ -138,11 +140,15 @@ export default function Header() {
                     }
                 >
                     <span className="header__logo">
-                        R
+                        <img
+                            src={logoRDigital}
+                            alt=""
+                            className="header__logo-image"
+                        />
                     </span>
 
                     <span className="header__brand-text">
-                        R DIGITAL
+                        R.DIGITAL
                     </span>
                 </a>
 

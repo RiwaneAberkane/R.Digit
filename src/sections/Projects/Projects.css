@@ -5,8 +5,7 @@
 .projects {
     position: relative;
 
-    padding:
-        150px 0 180px;
+    padding: 150px 0 180px;
 
     background:
         linear-gradient(180deg,
@@ -16,6 +15,7 @@
 
     overflow: hidden;
 }
+
 
 /* =========================================
    HEADER
@@ -37,8 +37,7 @@
 .projects__heading h2 {
     max-width: 850px;
 
-    color:
-        var(--color-navy);
+    color: var(--color-navy);
 
     font-size:
         clamp(3rem,
@@ -53,8 +52,7 @@
 }
 
 .projects__heading h2 span {
-    color:
-        var(--color-blue);
+    color: var(--color-blue);
 }
 
 .projects__intro {
@@ -62,13 +60,13 @@
 
     padding-bottom: 8px;
 
-    color:
-        var(--color-text-soft);
+    color: var(--color-text-soft);
 
     font-size: 1rem;
 
     line-height: 1.8;
 }
+
 
 /* =========================================
    PROJECT LIST
@@ -80,6 +78,7 @@
 
     gap: 190px;
 }
+
 
 /* =========================================
    PROJECT
@@ -116,6 +115,7 @@
     order: 1;
 }
 
+
 /* =========================================
    VISUAL
 ========================================= */
@@ -143,8 +143,7 @@
 
     border-radius: 50%;
 
-    filter:
-        blur(65px);
+    filter: blur(65px);
 
     opacity: 0.55;
 
@@ -188,6 +187,7 @@
     left: auto;
 }
 
+
 /* =========================================
    BROWSER
 ========================================= */
@@ -230,6 +230,7 @@
         rotateY(-3deg) rotateX(1deg);
 }
 
+
 /* =========================================
    BROWSER TOP
 ========================================= */
@@ -246,8 +247,7 @@
 
     height: 54px;
 
-    padding:
-        0 18px;
+    padding: 0 18px;
 
     background:
         rgba(250,
@@ -292,11 +292,9 @@
 .project-browser__address {
     justify-self: center;
 
-    padding:
-        6px 16px;
+    padding: 6px 16px;
 
-    color:
-        var(--color-text-light);
+    color: var(--color-text-light);
 
     font-size: 0.6rem;
     font-weight: 650;
@@ -313,14 +311,14 @@
 }
 
 .project-browser__index {
-    color:
-        var(--color-text-light);
+    color: var(--color-text-light);
 
     font-size: 0.58rem;
     font-weight: 800;
 
     letter-spacing: 0.1em;
 }
+
 
 /* =========================================
    SCREENSHOT
@@ -330,7 +328,13 @@
     position: relative;
 
     display: flex;
-    align-items: center;
+
+    /*
+     * IMPORTANT :
+     * on cale maintenant la capture en haut
+     * du faux navigateur.
+     */
+    align-items: flex-start;
     justify-content: center;
 
     width: 100%;
@@ -339,8 +343,7 @@
 
     overflow: hidden;
 
-    background:
-        #eef2f8;
+    background: #eef2f8;
 }
 
 .project-browser__image {
@@ -349,15 +352,23 @@
     width: 100%;
     height: 100%;
 
+    /*
+     * L'image reste entièrement visible.
+     * Elle n'est jamais zoomée/coupée.
+     */
     object-fit: contain;
-    object-position: center;
 
-    transform:
-        scale(1);
+    /*
+     * IMPORTANT :
+     * priorité au haut de la capture.
+     */
+    object-position: top center;
 
-    will-change:
-        transform;
+    transform: none;
+
+    will-change: transform;
 }
+
 
 /* =========================================
    CONTENT
@@ -379,8 +390,7 @@
 
     margin-bottom: 28px;
 
-    color:
-        var(--color-text-light);
+    color: var(--color-text-light);
 
     font-size: 0.62rem;
     font-weight: 800;
@@ -389,8 +399,7 @@
 }
 
 .project-showcase__number span:first-child {
-    color:
-        var(--color-blue);
+    color: var(--color-blue);
 }
 
 .project-showcase__line {
@@ -409,8 +418,7 @@
 
     margin-bottom: 12px;
 
-    color:
-        var(--color-blue);
+    color: var(--color-blue);
 
     font-size: 0.67rem;
     font-weight: 800;
@@ -421,8 +429,7 @@
 }
 
 .project-showcase__content h3 {
-    color:
-        var(--color-navy);
+    color: var(--color-navy);
 
     font-size:
         clamp(2.8rem,
@@ -441,13 +448,13 @@
 
     margin-top: 25px;
 
-    color:
-        var(--color-text-soft);
+    color: var(--color-text-soft);
 
     font-size: 0.96rem;
 
     line-height: 1.8;
 }
+
 
 /* =========================================
    TAGS
@@ -463,11 +470,9 @@
 }
 
 .project-showcase__tags span {
-    padding:
-        8px 12px;
+    padding: 8px 12px;
 
-    color:
-        var(--color-navy);
+    color: var(--color-navy);
 
     font-size: 0.63rem;
     font-weight: 700;
@@ -486,6 +491,7 @@
 
     border-radius: 999px;
 }
+
 
 /* =========================================
    HIGHLIGHTS
@@ -506,8 +512,7 @@
 
     gap: 10px;
 
-    color:
-        var(--color-navy);
+    color: var(--color-navy);
 
     font-size: 0.82rem;
     font-weight: 600;
@@ -522,8 +527,7 @@
 
     flex-shrink: 0;
 
-    color:
-        var(--color-blue);
+    color: var(--color-blue);
 
     background:
         rgba(18,
@@ -533,6 +537,7 @@
 
     border-radius: 50%;
 }
+
 
 /* =========================================
    ACTIONS
@@ -547,6 +552,7 @@
 
     margin-top: 34px;
 }
+
 
 /* =========================================
    DÉCOUVRIR LE PROJET
@@ -564,8 +570,7 @@
     padding:
         0 7px 0 17px;
 
-    color:
-        var(--color-white);
+    color: var(--color-white);
 
     font-size: 0.76rem;
     font-weight: 750;
@@ -574,8 +579,7 @@
 
     white-space: nowrap;
 
-    background:
-        var(--color-navy);
+    background: var(--color-navy);
 
     border:
         1px solid var(--color-navy);
@@ -604,11 +608,9 @@
 
     flex-shrink: 0;
 
-    color:
-        var(--color-navy);
+    color: var(--color-navy);
 
-    background:
-        var(--color-white);
+    background: var(--color-white);
 
     border-radius: 50%;
 
@@ -620,14 +622,11 @@
 }
 
 .project-showcase__link:hover {
-    color:
-        var(--color-white);
+    color: var(--color-white);
 
-    background:
-        var(--color-blue);
+    background: var(--color-blue);
 
-    border-color:
-        var(--color-blue);
+    border-color: var(--color-blue);
 
     transform:
         translateY(-2px);
@@ -640,11 +639,9 @@
 }
 
 .project-showcase__link:hover .project-showcase__link-icon {
-    color:
-        var(--color-blue);
+    color: var(--color-blue);
 
-    background:
-        var(--color-white);
+    background: var(--color-white);
 
     transform:
         rotate(45deg);
@@ -655,6 +652,7 @@
             47,
             0.12);
 }
+
 
 /* =========================================
    VOIR LE SITE
@@ -669,11 +667,9 @@
 
     height: 46px;
 
-    padding:
-        0 17px;
+    padding: 0 17px;
 
-    color:
-        var(--color-blue);
+    color: var(--color-blue);
 
     font-size: 0.76rem;
     font-weight: 750;
@@ -745,6 +741,7 @@
     cursor: not-allowed;
 }
 
+
 /* =========================================
    XENOM
 ========================================= */
@@ -776,9 +773,9 @@
 }
 
 .project-showcase--xenom .project-browser__viewport {
-    background:
-        #050607;
+    background: #050607;
 }
+
 
 /* =========================================
    HALAL FOOD CAEN
@@ -795,13 +792,11 @@
 }
 
 .project-showcase--halal .project-showcase__category {
-    color:
-        #b98200;
+    color: #b98200;
 }
 
 .project-showcase--halal .project-showcase__number span:first-child {
-    color:
-        #c28c0b;
+    color: #c28c0b;
 }
 
 .project-showcase--halal .project-showcase__tags span {
@@ -819,8 +814,7 @@
 }
 
 .project-showcase--halal .project-showcase__live-link {
-    color:
-        #a67500;
+    color: #a67500;
 
     background:
         rgba(220,
@@ -836,9 +830,9 @@
 }
 
 .project-showcase--halal .project-browser__viewport {
-    background:
-        #fffaf1;
+    background: #fffaf1;
 }
+
 
 /* =========================================
    CRISTOUNE
@@ -855,13 +849,11 @@
 }
 
 .project-showcase--cristoune .project-showcase__category {
-    color:
-        #8f61a8;
+    color: #8f61a8;
 }
 
 .project-showcase--cristoune .project-showcase__number span:first-child {
-    color:
-        #9669ad;
+    color: #9669ad;
 }
 
 .project-showcase--cristoune .project-showcase__tags span {
@@ -879,8 +871,7 @@
 }
 
 .project-showcase--cristoune .project-showcase__live-link {
-    color:
-        #8f61a8;
+    color: #8f61a8;
 
     background:
         rgba(143,
@@ -896,15 +887,16 @@
 }
 
 .project-showcase--cristoune .project-browser__viewport {
-    background:
-        #fbf7f2;
+    background: #fbf7f2;
 }
+
 
 /* =========================================
    TABLET
 ========================================= */
 
 @media (max-width: 1100px) {
+
     .projects {
         padding:
             120px 0 140px;
@@ -933,11 +925,13 @@
     }
 }
 
+
 /* =========================================
    MOBILE / TABLET
 ========================================= */
 
 @media (max-width: 900px) {
+
     .projects {
         padding:
             100px 0 120px;
@@ -999,11 +993,13 @@
     }
 }
 
+
 /* =========================================
    PHONE
 ========================================= */
 
 @media (max-width: 600px) {
+
     .projects {
         padding:
             85px 0 100px;
@@ -1039,8 +1035,7 @@
 
         gap: 8px;
 
-        padding:
-            0 11px;
+        padding: 0 11px;
     }
 
     .project-browser__controls {
@@ -1053,8 +1048,7 @@
     }
 
     .project-browser__address {
-        padding:
-            4px 8px;
+        padding: 4px 8px;
 
         font-size: 0.47rem;
     }
@@ -1125,8 +1119,7 @@
     .project-showcase__live-link {
         height: 43px;
 
-        padding:
-            0 12px;
+        padding: 0 12px;
 
         gap: 7px;
 
@@ -1136,11 +1129,13 @@
     }
 }
 
+
 /* =========================================
    VERY SMALL PHONE
 ========================================= */
 
 @media (max-width: 380px) {
+
     .project-showcase__actions {
         gap: 8px;
     }
@@ -1164,14 +1159,14 @@
     .project-showcase__live-link {
         height: 41px;
 
-        padding:
-            0 10px;
+        padding: 0 10px;
 
         gap: 6px;
 
         font-size: 0.64rem;
     }
 }
+
 
 /* =========================================
    REDUCED MOTION
