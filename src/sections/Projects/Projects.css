@@ -4,7 +4,6 @@
 
 .projects {
     position: relative;
-
     padding: 150px 0 180px;
 
     background:
@@ -45,9 +44,7 @@
             5.5rem);
 
     font-weight: 780;
-
     line-height: 0.95;
-
     letter-spacing: -0.065em;
 }
 
@@ -63,7 +60,6 @@
     color: var(--color-text-soft);
 
     font-size: 1rem;
-
     line-height: 1.8;
 }
 
@@ -334,6 +330,7 @@
      * on cale maintenant la capture en haut
      * du faux navigateur.
      */
+
     align-items: flex-start;
     justify-content: center;
 
@@ -356,12 +353,14 @@
      * L'image reste entièrement visible.
      * Elle n'est jamais zoomée/coupée.
      */
+
     object-fit: contain;
 
     /*
      * IMPORTANT :
      * priorité au haut de la capture.
      */
+
     object-position: top center;
 
     transform: none;
@@ -892,6 +891,570 @@
 
 
 /* =========================================
+   CRISTOUNE — SCREENSHOT FIT
+========================================= */
+
+/*
+ * CrisToune possède un ratio différent
+ * des deux autres captures.
+ *
+ * On remplit donc le faux navigateur
+ * horizontalement pour supprimer les
+ * bandes sur les côtés.
+ *
+ * XENOM et Halal restent en contain.
+ */
+
+.project-showcase--cristoune .project-browser__image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover !important;
+    object-position: top center !important;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html[data-theme="dark"] .projects {
+    background:
+        linear-gradient(180deg,
+            #060b14 0%,
+            #07101d 42%,
+            #060b14 100%);
+}
+
+
+/* =========================================
+   DARK HEADER
+========================================= */
+
+html[data-theme="dark"] .projects__heading h2 {
+    color: #f4f7fb;
+}
+
+html[data-theme="dark"] .projects__heading h2 span {
+    color: #1268ff;
+}
+
+html[data-theme="dark"] .projects__intro {
+    color: #8f9db1;
+}
+
+
+/* =========================================
+   DARK PROJECT VISUAL
+========================================= */
+
+html[data-theme="dark"] .project-showcase__background-number {
+    color:
+        rgba(18,
+            104,
+            255,
+            0.075);
+}
+
+html[data-theme="dark"] .project-showcase__glow {
+    opacity: 0.7;
+}
+
+
+/* =========================================
+   DARK BROWSER
+========================================= */
+
+html[data-theme="dark"] .project-browser {
+    background:
+        rgba(10,
+            18,
+            31,
+            0.96);
+
+    border-color:
+        rgba(255,
+            255,
+            255,
+            0.08);
+
+    box-shadow:
+        0 45px 110px rgba(0,
+            0,
+            0,
+            0.38),
+        0 12px 40px rgba(18,
+            104,
+            255,
+            0.08);
+}
+
+html[data-theme="dark"] .project-browser__top {
+    background:
+        rgba(13,
+            23,
+            38,
+            0.98);
+
+    border-bottom-color:
+        rgba(255,
+            255,
+            255,
+            0.07);
+}
+
+html[data-theme="dark"] .project-browser__controls span {
+    background:
+        rgba(255,
+            255,
+            255,
+            0.14);
+}
+
+html[data-theme="dark"] .project-browser__controls span:last-child {
+    background:
+        rgba(18,
+            104,
+            255,
+            0.8);
+}
+
+html[data-theme="dark"] .project-browser__address {
+    color: #8997aa;
+
+    background:
+        rgba(255,
+            255,
+            255,
+            0.045);
+
+    border:
+        1px solid rgba(255,
+            255,
+            255,
+            0.055);
+}
+
+html[data-theme="dark"] .project-browser__index {
+    color: #7f8da3;
+}
+
+/*
+ * IMPORTANT :
+ * le dark mode ne modifie pas
+ * le cadrage des captures.
+ */
+
+html[data-theme="dark"] .project-browser__image {
+    transform: none;
+}
+
+
+/* =========================================
+   DARK CONTENT
+========================================= */
+
+html[data-theme="dark"] .project-showcase__number {
+    color: #7f8da3;
+}
+
+html[data-theme="dark"] .project-showcase__number span:first-child {
+    color: #49a2ff;
+}
+
+html[data-theme="dark"] .project-showcase__line {
+    background:
+        rgba(255,
+            255,
+            255,
+            0.16);
+}
+
+html[data-theme="dark"] .project-showcase__category {
+    color: #49a2ff;
+}
+
+html[data-theme="dark"] .project-showcase__content h3 {
+    color: #f4f7fb;
+}
+
+html[data-theme="dark"] .project-showcase__description {
+    color: #8f9db1;
+}
+
+
+/* =========================================
+   DARK TAGS
+========================================= */
+
+html[data-theme="dark"] .project-showcase__tags span {
+    color: #dce5f2;
+
+    background:
+        rgba(18,
+            104,
+            255,
+            0.09);
+
+    border-color:
+        rgba(18,
+            104,
+            255,
+            0.18);
+}
+
+
+/* =========================================
+   DARK HIGHLIGHTS
+========================================= */
+
+html[data-theme="dark"] .project-showcase__highlight {
+    color: #cbd6e5;
+}
+
+html[data-theme="dark"] .project-showcase__check {
+    color: #49a2ff;
+
+    background:
+        rgba(18,
+            104,
+            255,
+            0.13);
+
+    box-shadow:
+        inset 0 0 0 1px rgba(18,
+            104,
+            255,
+            0.08);
+}
+
+
+/* =========================================
+   DARK PRIMARY ACTION
+========================================= */
+
+html[data-theme="dark"] .project-showcase__link {
+    color: #ffffff;
+
+    background:
+        linear-gradient(135deg,
+            #1268ff,
+            #0b57bd);
+
+    border-color: #1268ff;
+
+    box-shadow:
+        0 12px 30px rgba(0,
+            0,
+            0,
+            0.24),
+        0 8px 26px rgba(18,
+            104,
+            255,
+            0.13);
+}
+
+html[data-theme="dark"] .project-showcase__link-icon {
+    color: #1268ff;
+
+    background: #f7faff;
+}
+
+html[data-theme="dark"] .project-showcase__link:hover {
+    color: #ffffff;
+
+    background:
+        linear-gradient(135deg,
+            #2479ff,
+            #1268ff);
+
+    border-color: #2479ff;
+
+    box-shadow:
+        0 15px 36px rgba(0,
+            0,
+            0,
+            0.28),
+        0 10px 30px rgba(18,
+            104,
+            255,
+            0.2);
+}
+
+html[data-theme="dark"] .project-showcase__link:hover .project-showcase__link-icon {
+    color: #1268ff;
+
+    background: #ffffff;
+}
+
+
+/* =========================================
+   DARK LIVE LINK
+========================================= */
+
+html[data-theme="dark"] .project-showcase__live-link {
+    color: #66adff;
+
+    background:
+        rgba(18,
+            104,
+            255,
+            0.08);
+
+    border-color:
+        rgba(73,
+            162,
+            255,
+            0.2);
+}
+
+html[data-theme="dark"] .project-showcase__live-link:not(.project-showcase__live-link--disabled):hover {
+    color: #8fc4ff;
+
+    background:
+        rgba(18,
+            104,
+            255,
+            0.14);
+
+    border-color:
+        rgba(73,
+            162,
+            255,
+            0.34);
+
+    box-shadow:
+        0 10px 28px rgba(18,
+            104,
+            255,
+            0.1);
+}
+
+
+/* =========================================
+   DARK XENOM
+========================================= */
+
+html[data-theme="dark"] .project-showcase--xenom .project-showcase__glow {
+    background:
+        radial-gradient(circle,
+            rgba(18,
+                104,
+                255,
+                0.18),
+            rgba(13,
+                32,
+                65,
+                0.16),
+            transparent 70%);
+}
+
+html[data-theme="dark"] .project-showcase--xenom .project-browser {
+    border-color:
+        rgba(255,
+            255,
+            255,
+            0.075);
+
+    box-shadow:
+        0 45px 120px rgba(0,
+            0,
+            0,
+            0.48),
+        0 15px 50px rgba(18,
+            104,
+            255,
+            0.1);
+}
+
+html[data-theme="dark"] .project-showcase--xenom .project-browser__viewport {
+    background: #050607;
+}
+
+
+/* =========================================
+   DARK HALAL FOOD CAEN
+========================================= */
+
+html[data-theme="dark"] .project-showcase--halal .project-showcase__glow {
+    background:
+        radial-gradient(circle,
+            rgba(232,
+                177,
+                45,
+                0.15),
+            transparent 70%);
+}
+
+html[data-theme="dark"] .project-showcase--halal .project-showcase__category {
+    color: #e5b84d;
+}
+
+html[data-theme="dark"] .project-showcase--halal .project-showcase__number span:first-child {
+    color: #e5b84d;
+}
+
+html[data-theme="dark"] .project-showcase--halal .project-showcase__tags span {
+    color: #ead8a4;
+
+    background:
+        rgba(220,
+            167,
+            38,
+            0.09);
+
+    border-color:
+        rgba(232,
+            177,
+            45,
+            0.2);
+}
+
+html[data-theme="dark"] .project-showcase--halal .project-showcase__check {
+    color: #e5b84d;
+
+    background:
+        rgba(220,
+            167,
+            38,
+            0.1);
+}
+
+html[data-theme="dark"] .project-showcase--halal .project-showcase__live-link {
+    color: #e5b84d;
+
+    background:
+        rgba(220,
+            167,
+            38,
+            0.08);
+
+    border-color:
+        rgba(232,
+            177,
+            45,
+            0.2);
+}
+
+html[data-theme="dark"] .project-showcase--halal .project-showcase__live-link:not(.project-showcase__live-link--disabled):hover {
+    color: #f0ca6e;
+
+    background:
+        rgba(220,
+            167,
+            38,
+            0.13);
+
+    border-color:
+        rgba(232,
+            177,
+            45,
+            0.32);
+
+    box-shadow:
+        0 10px 28px rgba(220,
+            167,
+            38,
+            0.08);
+}
+
+html[data-theme="dark"] .project-showcase--halal .project-browser__viewport {
+    background: #fffaf1;
+}
+
+
+/* =========================================
+   DARK CRISTOUNE
+========================================= */
+
+html[data-theme="dark"] .project-showcase--cristoune .project-showcase__glow {
+    background:
+        radial-gradient(circle,
+            rgba(170,
+                135,
+                191,
+                0.16),
+            transparent 70%);
+}
+
+html[data-theme="dark"] .project-showcase--cristoune .project-showcase__category {
+    color: #c59bd8;
+}
+
+html[data-theme="dark"] .project-showcase--cristoune .project-showcase__number span:first-child {
+    color: #c59bd8;
+}
+
+html[data-theme="dark"] .project-showcase--cristoune .project-showcase__tags span {
+    color: #ddc8e7;
+
+    background:
+        rgba(143,
+            97,
+            168,
+            0.1);
+
+    border-color:
+        rgba(197,
+            155,
+            216,
+            0.2);
+}
+
+html[data-theme="dark"] .project-showcase--cristoune .project-showcase__check {
+    color: #c59bd8;
+
+    background:
+        rgba(143,
+            97,
+            168,
+            0.11);
+}
+
+html[data-theme="dark"] .project-showcase--cristoune .project-showcase__live-link {
+    color: #c59bd8;
+
+    background:
+        rgba(143,
+            97,
+            168,
+            0.09);
+
+    border-color:
+        rgba(197,
+            155,
+            216,
+            0.2);
+}
+
+html[data-theme="dark"] .project-showcase--cristoune .project-showcase__live-link:not(.project-showcase__live-link--disabled):hover {
+    color: #ddbae9;
+
+    background:
+        rgba(143,
+            97,
+            168,
+            0.14);
+
+    border-color:
+        rgba(197,
+            155,
+            216,
+            0.32);
+
+    box-shadow:
+        0 10px 28px rgba(143,
+            97,
+            168,
+            0.08);
+}
+
+html[data-theme="dark"] .project-showcase--cristoune .project-browser__viewport {
+    background: #fbf7f2;
+}
+
+
+/* =========================================
    TABLET
 ========================================= */
 
@@ -1024,6 +1587,7 @@
         gap: 40px;
     }
 
+
     /* Browser */
 
     .project-browser {
@@ -1057,6 +1621,7 @@
         font-size: 0.45rem;
     }
 
+
     /* Number */
 
     .project-showcase__background-number,
@@ -1065,6 +1630,7 @@
 
         font-size: 8rem;
     }
+
 
     /* Content */
 
@@ -1084,6 +1650,7 @@
 
         font-size: 0.9rem;
     }
+
 
     /* =====================================
        BUTTONS MOBILE

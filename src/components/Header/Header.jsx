@@ -6,12 +6,15 @@ import {
 import {
     ArrowUpRight,
     Menu,
+    Moon,
+    Sun,
     X,
 } from 'lucide-react';
 
 import logoRDigital from '../../assets/images/logo-rdigital.png';
 
 import './Header.css';
+
 
 const navigation = [
     {
@@ -36,9 +39,68 @@ const navigation = [
     },
 ];
 
+
+/* =========================================
+   THEME
+========================================= */
+
+const getInitialTheme = () => {
+    if (typeof window === 'undefined') {
+        return 'light';
+    }
+
+    const savedTheme =
+        window.localStorage.getItem(
+            'r-digital-theme',
+        );
+
+    if (
+        savedTheme === 'light' ||
+        savedTheme === 'dark'
+    ) {
+        return savedTheme;
+    }
+
+    /*
+     * On garde le portfolio clair par défaut
+     * pour respecter la DA originale.
+     */
+    return 'light';
+};
+
+
 export default function Header() {
     const [isOpen, setIsOpen] =
         useState(false);
+
+    const [theme, setTheme] =
+        useState(getInitialTheme);
+
+
+    /* =========================================
+       APPLY THEME
+    ========================================= */
+
+    useEffect(() => {
+        const root =
+            document.documentElement;
+
+        root.dataset.theme =
+            theme;
+
+        root.style.colorScheme =
+            theme;
+
+        window.localStorage.setItem(
+            'r-digital-theme',
+            theme,
+        );
+    }, [theme]);
+
+
+    /* =========================================
+       MOBILE MENU
+    ========================================= */
 
     useEffect(() => {
         document.body.style.overflow =
@@ -65,9 +127,28 @@ export default function Header() {
         };
     }, [isOpen]);
 
+
     const closeMenu = () => {
         setIsOpen(false);
     };
+
+
+    /* =========================================
+       THEME TOGGLE
+    ========================================= */
+
+    const toggleTheme = () => {
+        setTheme((currentTheme) =>
+            currentTheme === 'light'
+                ? 'dark'
+                : 'light',
+        );
+    };
+
+
+    /* =========================================
+       SCROLL
+    ========================================= */
 
     const scrollToSection = (
         event,
@@ -79,6 +160,7 @@ export default function Header() {
          */
         if (window.location.pathname !== '/') {
             closeMenu();
+
             return;
         }
 
@@ -122,6 +204,7 @@ export default function Header() {
         });
     };
 
+
     return (
         <header className="header">
             <div className="container header__container">
@@ -151,6 +234,7 @@ export default function Header() {
                         R.DIGITAL
                     </span>
                 </a>
+
 
                 {/* NAVIGATION DESKTOP */}
 
@@ -186,52 +270,115 @@ export default function Header() {
                     )}
                 </nav>
 
-                {/* CTA DESKTOP */}
 
-                <a
-                    href="mailto:r.digitalcorporation@gmail.com"
-                    className="header__contact"
-                >
-                    Discutons
+                {/* ACTIONS */}
 
-                    <ArrowUpRight
-                        size={16}
-                        strokeWidth={2}
-                    />
-                </a>
+                <div className="header__actions">
 
-                {/* MENU MOBILE */}
+                    {/* DARK MODE */}
 
-                <button
-                    type="button"
-                    className="header__menu-button"
-                    onClick={() =>
-                        setIsOpen(
-                            (current) =>
-                                !current,
-                        )
-                    }
-                    aria-expanded={isOpen}
-                    aria-controls="mobile-menu"
-                    aria-label={
-                        isOpen
-                            ? 'Fermer le menu'
-                            : 'Ouvrir le menu'
-                    }
-                >
-                    {isOpen ? (
-                        <X
-                            size={22}
+                    <button
+                        type="button"
+                        className="header__theme-toggle"
+                        onClick={toggleTheme}
+                        aria-label={
+                            theme === 'dark'
+                                ? 'Activer le mode clair'
+                                : 'Activer le mode sombre'
+                        }
+                        aria-pressed={
+                            theme === 'dark'
+                        }
+                        title={
+                            theme === 'dark'
+                                ? 'Mode clair'
+                                : 'Mode sombre'
+                        }
+                    >
+                        <span className="header__theme-icons">
+
+                            <Sun
+                                size={18}
+                                strokeWidth={1.9}
+                                className={[
+                                    'header__theme-icon',
+                                    'header__theme-icon--sun',
+                                    theme === 'light'
+                                        ? 'header__theme-icon--active'
+                                        : '',
+                                ]
+                                    .filter(Boolean)
+                                    .join(' ')}
+                            />
+
+                            <Moon
+                                size={17}
+                                strokeWidth={1.9}
+                                className={[
+                                    'header__theme-icon',
+                                    'header__theme-icon--moon',
+                                    theme === 'dark'
+                                        ? 'header__theme-icon--active'
+                                        : '',
+                                ]
+                                    .filter(Boolean)
+                                    .join(' ')}
+                            />
+
+                        </span>
+                    </button>
+
+
+                    {/* CTA DESKTOP */}
+
+                    <a
+                        href="mailto:r.digitalcorporation@gmail.com"
+                        className="header__contact"
+                    >
+                        Discutons
+
+                        <ArrowUpRight
+                            size={16}
                             strokeWidth={2}
                         />
-                    ) : (
-                        <Menu
-                            size={22}
-                            strokeWidth={2}
-                        />
-                    )}
-                </button>
+                    </a>
+
+
+                    {/* MENU MOBILE */}
+
+                    <button
+                        type="button"
+                        className="header__menu-button"
+                        onClick={() =>
+                            setIsOpen(
+                                (current) =>
+                                    !current,
+                            )
+                        }
+                        aria-expanded={isOpen}
+                        aria-controls="mobile-menu"
+                        aria-label={
+                            isOpen
+                                ? 'Fermer le menu'
+                                : 'Ouvrir le menu'
+                        }
+                    >
+                        {isOpen ? (
+                            <X
+                                size={22}
+                                strokeWidth={2}
+                            />
+                        ) : (
+                            <Menu
+                                size={22}
+                                strokeWidth={2}
+                            />
+                        )}
+                    </button>
+
+                </div>
             </div>
+
 
             {/* MENU MOBILE */}
 
@@ -319,9 +466,11 @@ export default function Header() {
                         </nav>
                     </div>
 
+
                     {/* BAS DU MENU */}
 
                     <div className="header__mobile-bottom">
+
                         <div className="header__mobile-contact-copy">
                             <span>
                                 Une idée en tête ?
@@ -337,6 +486,7 @@ export default function Header() {
                                 à discuter ?
                             </p>
                         </div>
+
 
                         <a
                             href="mailto:r.digitalcorporation@gmail.com"
@@ -354,6 +504,7 @@ export default function Header() {
                             </span>
                         </a>
 
+
                         <div className="header__mobile-footer">
                             <span>
                                 R DIGITAL
@@ -363,6 +514,7 @@ export default function Header() {
                                 2026
                             </span>
                         </div>
+
                     </div>
                 </div>
             </div>

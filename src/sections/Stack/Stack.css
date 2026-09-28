@@ -1,3 +1,7 @@
+/* =========================================
+   STACK / TECHNOLOGIES
+========================================= */
+
 .stack {
     position: relative;
 
@@ -14,6 +18,7 @@
 
     overflow: hidden;
 }
+
 
 /* =========================
    BACKGROUND
@@ -43,6 +48,7 @@
     pointer-events: none;
 }
 
+
 .stack__glow {
     position: absolute;
 
@@ -52,6 +58,7 @@
 
     pointer-events: none;
 }
+
 
 .stack__glow--one {
     top: 10%;
@@ -66,6 +73,7 @@
             transparent 68%);
 }
 
+
 .stack__glow--two {
     right: -190px;
     bottom: 0;
@@ -78,6 +86,7 @@
             rgba(36, 146, 255, 0.16),
             transparent 70%);
 }
+
 
 /* =========================
    HEADER
@@ -99,6 +108,7 @@
     margin-bottom: 110px;
 }
 
+
 .stack__label {
     display: inline-flex;
     align-items: center;
@@ -118,6 +128,7 @@
     text-transform: uppercase;
 }
 
+
 .stack__label>span {
     width: 20px;
     height: 2px;
@@ -125,6 +136,7 @@
     background:
         #2589ff;
 }
+
 
 .stack__header h2 {
     max-width: 900px;
@@ -143,16 +155,19 @@
     letter-spacing: -0.075em;
 }
 
+
 .stack__header h2>span {
     color:
         #3e98ff;
 }
+
 
 .stack__intro {
     max-width: 490px;
 
     padding-bottom: 6px;
 }
+
 
 .stack__intro p {
     color:
@@ -162,6 +177,7 @@
 
     line-height: 1.85;
 }
+
 
 .stack__intro-meta {
     display: flex;
@@ -178,10 +194,12 @@
     font-weight: 650;
 }
 
+
 .stack__intro-meta svg {
     color:
         #3e98ff;
 }
+
 
 /* =========================
    MAP
@@ -197,6 +215,7 @@
 
     margin-inline: auto;
 }
+
 
 /* =========================
    CORE
@@ -216,6 +235,7 @@
 
     z-index: 4;
 }
+
 
 .stack__core-aura {
     position: absolute;
@@ -238,6 +258,7 @@
     filter: blur(10px);
 }
 
+
 .stack__core-ring {
     position: absolute;
 
@@ -253,10 +274,12 @@
         translate(-50%, -50%);
 }
 
+
 .stack__core-ring--one {
     width: 340px;
     height: 340px;
 }
+
 
 .stack__core-ring--two {
     width: 410px;
@@ -266,6 +289,7 @@
 
     border-style: dashed;
 }
+
 
 .stack__core-card {
     position: relative;
@@ -291,11 +315,13 @@
 
     box-shadow:
         0 35px 90px rgba(0, 0, 0, 0.35),
+
         0 0 45px rgba(18, 104, 255, 0.12);
 
     backdrop-filter:
         blur(20px);
 }
+
 
 .stack__core-top {
     display: flex;
@@ -311,6 +337,7 @@
 
     letter-spacing: 0.13em;
 }
+
 
 .stack__core-logo {
     display: grid;
@@ -336,6 +363,7 @@
         0 8px 24px rgba(18, 104, 255, 0.33);
 }
 
+
 .stack__core-center {
     display: flex;
     flex-direction: column;
@@ -343,6 +371,7 @@
 
     flex: 1;
 }
+
 
 .stack__core-center>span {
     margin-bottom: 10px;
@@ -356,6 +385,7 @@
     letter-spacing: 0.16em;
 }
 
+
 .stack__core-center strong {
     color: #ffffff;
 
@@ -366,12 +396,14 @@
     letter-spacing: -0.07em;
 }
 
+
 .stack__core-center em {
     color:
         #3497ff;
 
     font-style: normal;
 }
+
 
 .stack__core-bottom {
     display: grid;
@@ -392,6 +424,7 @@
     letter-spacing: 0.12em;
 }
 
+
 .stack__core-bottom>span:nth-child(2) {
     height: 1px;
 
@@ -400,6 +433,7 @@
             rgba(255, 255, 255, 0.16),
             transparent);
 }
+
 
 /* =========================
    GROUPS
@@ -436,6 +470,7 @@
         box-shadow var(--transition-normal);
 }
 
+
 .stack__group:hover {
     transform:
         translateY(-6px);
@@ -445,28 +480,34 @@
 
     box-shadow:
         0 35px 75px rgba(0, 0, 0, 0.25),
+
         0 0 35px rgba(18, 104, 255, 0.06);
 }
+
 
 .stack__group--frontend {
     top: 4%;
     left: 3%;
 }
 
+
 .stack__group--motion {
     top: 7%;
     right: 3%;
 }
+
 
 .stack__group--data {
     bottom: 4%;
     right: 3%;
 }
 
+
 .stack__group--experience {
     bottom: 7%;
     left: 3%;
 }
+
 
 /* =========================
    GROUP HEADER
@@ -480,12 +521,14 @@
     gap: 20px;
 }
 
+
 .stack__group-top>div {
     display: flex;
     flex-direction: column;
 
     gap: 5px;
 }
+
 
 .stack__group-number {
     color:
@@ -496,6 +539,7 @@
 
     letter-spacing: 0.14em;
 }
+
 
 .stack__group-eyebrow {
     color:
@@ -508,6 +552,7 @@
 
     text-transform: uppercase;
 }
+
 
 .stack__group-icon {
     display: grid;
@@ -528,6 +573,7 @@
     border-radius: 12px;
 }
 
+
 .stack__group h3 {
     margin-top: 44px;
 
@@ -537,6 +583,7 @@
 
     letter-spacing: -0.035em;
 }
+
 
 /* =========================
    TECHNOLOGIES
@@ -550,6 +597,7 @@
 
     margin-top: 20px;
 }
+
 
 .stack__technologies>span {
     display: inline-flex;
@@ -575,6 +623,7 @@
     border-radius: 999px;
 }
 
+
 .stack__technology-dot {
     width: 5px;
     height: 5px;
@@ -587,6 +636,7 @@
     box-shadow:
         0 0 7px rgba(66, 154, 255, 0.55);
 }
+
 
 /* =========================
    CONNECTORS
@@ -611,6 +661,7 @@
 
     pointer-events: none;
 }
+
 
 .stack__connector::after {
     content: "";
@@ -637,6 +688,7 @@
         0 0 13px rgba(75, 158, 255, 0.55);
 }
 
+
 .stack__connector--one {
     top: 31%;
     left: 27%;
@@ -645,9 +697,11 @@
         rotate(25deg);
 }
 
+
 .stack__connector--one::after {
     right: 0;
 }
+
 
 .stack__connector--two {
     top: 31%;
@@ -657,9 +711,11 @@
         rotate(-25deg);
 }
 
+
 .stack__connector--two::after {
     left: 0;
 }
+
 
 .stack__connector--three {
     bottom: 31%;
@@ -669,9 +725,11 @@
         rotate(25deg);
 }
 
+
 .stack__connector--three::after {
     left: 0;
 }
+
 
 .stack__connector--four {
     bottom: 31%;
@@ -681,9 +739,11 @@
         rotate(-25deg);
 }
 
+
 .stack__connector--four::after {
     right: 0;
 }
+
 
 /* =========================
    BOTTOM MESSAGE
@@ -710,12 +770,14 @@
         1px solid rgba(255, 255, 255, 0.07);
 }
 
+
 .stack__bottom>span {
     color:
         rgba(255, 255, 255, 0.33);
 
     font-size: 0.66rem;
 }
+
 
 .stack__bottom p {
     color:
@@ -724,6 +786,7 @@
     font-size: 0.72rem;
     font-weight: 700;
 }
+
 
 .stack__bottom a {
     display: inline-flex;
@@ -741,29 +804,362 @@
         color var(--transition-fast);
 }
 
+
 .stack__bottom a svg {
     transition:
         transform var(--transition-normal);
 }
 
+
 .stack__bottom a:hover {
     color: #ffffff;
 }
+
 
 .stack__bottom a:hover svg {
     transform:
         translate(3px, -3px);
 }
 
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+/*
+ * Cette section possède volontairement une identité sombre
+ * même lorsque le site est en mode clair.
+ *
+ * Le dark mode ne change donc pas sa direction artistique :
+ * il approfondit simplement le fond et raccorde la section
+ * aux autres sections dark de R Digital.
+ */
+
+html[data-theme="dark"] .stack {
+    background:
+        linear-gradient(145deg,
+            #030812 0%,
+            #061326 48%,
+            #050e1c 100%);
+}
+
+
+/* =========================
+   DARK BACKGROUND
+========================= */
+
+html[data-theme="dark"] .stack__grid {
+    opacity: 0.26;
+
+    background-image:
+        linear-gradient(rgba(73, 162, 255, 0.055) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(73, 162, 255, 0.055) 1px,
+            transparent 1px);
+}
+
+
+html[data-theme="dark"] .stack__glow--one {
+    background:
+        radial-gradient(circle,
+            rgba(18, 104, 255, 0.3),
+            transparent 68%);
+}
+
+
+html[data-theme="dark"] .stack__glow--two {
+    background:
+        radial-gradient(circle,
+            rgba(36, 146, 255, 0.2),
+            transparent 70%);
+}
+
+
+/* =========================
+   DARK HEADER
+========================= */
+
+html[data-theme="dark"] .stack__label {
+    color:
+        #62abff;
+}
+
+
+html[data-theme="dark"] .stack__label>span {
+    background:
+        #49a2ff;
+
+    box-shadow:
+        0 0 12px rgba(73, 162, 255, 0.3);
+}
+
+
+html[data-theme="dark"] .stack__header h2 {
+    color:
+        #f4f7fb;
+}
+
+
+html[data-theme="dark"] .stack__header h2>span {
+    color:
+        #49a2ff;
+}
+
+
+html[data-theme="dark"] .stack__intro p {
+    color:
+        rgba(224, 232, 243, 0.62);
+}
+
+
+html[data-theme="dark"] .stack__intro-meta {
+    color:
+        rgba(184, 198, 216, 0.48);
+}
+
+
+html[data-theme="dark"] .stack__intro-meta svg {
+    color:
+        #49a2ff;
+}
+
+
+/* =========================
+   DARK CORE
+========================= */
+
+html[data-theme="dark"] .stack__core-aura {
+    background:
+        radial-gradient(circle,
+            rgba(18, 104, 255, 0.34),
+            rgba(18, 104, 255, 0.09) 42%,
+            transparent 69%);
+}
+
+
+html[data-theme="dark"] .stack__core-ring {
+    border-color:
+        rgba(73, 162, 255, 0.2);
+}
+
+
+html[data-theme="dark"] .stack__core-card {
+    background:
+        linear-gradient(145deg,
+            rgba(9, 32, 67, 0.98),
+            rgba(4, 16, 34, 0.99));
+
+    border-color:
+        rgba(73, 162, 255, 0.3);
+
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.48),
+
+        0 0 55px rgba(18, 104, 255, 0.15),
+
+        inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+
+html[data-theme="dark"] .stack__core-logo {
+    box-shadow:
+        0 8px 28px rgba(18, 104, 255, 0.4);
+}
+
+
+html[data-theme="dark"] .stack__core-top {
+    color:
+        rgba(244, 247, 251, 0.7);
+}
+
+
+html[data-theme="dark"] .stack__core-center>span {
+    color:
+        rgba(203, 214, 229, 0.42);
+}
+
+
+html[data-theme="dark"] .stack__core-center strong {
+    color:
+        #f4f7fb;
+}
+
+
+html[data-theme="dark"] .stack__core-center em {
+    color:
+        #49a2ff;
+}
+
+
+html[data-theme="dark"] .stack__core-bottom {
+    color:
+        rgba(203, 214, 229, 0.38);
+}
+
+
+/* =========================
+   DARK GROUPS
+========================= */
+
+html[data-theme="dark"] .stack__group {
+    background:
+        linear-gradient(145deg,
+            rgba(12, 29, 55, 0.94),
+            rgba(6, 19, 37, 0.94));
+
+    border-color:
+        rgba(255, 255, 255, 0.075);
+
+    box-shadow:
+        0 25px 65px rgba(0, 0, 0, 0.28),
+
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+
+html[data-theme="dark"] .stack__group:hover {
+    border-color:
+        rgba(73, 162, 255, 0.28);
+
+    box-shadow:
+        0 35px 75px rgba(0, 0, 0, 0.38),
+
+        0 0 40px rgba(18, 104, 255, 0.09);
+}
+
+
+html[data-theme="dark"] .stack__group-number {
+    color:
+        rgba(203, 214, 229, 0.34);
+}
+
+
+html[data-theme="dark"] .stack__group-eyebrow {
+    color:
+        #49a2ff;
+}
+
+
+html[data-theme="dark"] .stack__group-icon {
+    color:
+        #62abff;
+
+    background:
+        rgba(18, 104, 255, 0.14);
+
+    border-color:
+        rgba(73, 162, 255, 0.16);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+
+html[data-theme="dark"] .stack__group h3 {
+    color:
+        #f4f7fb;
+}
+
+
+/* =========================
+   DARK TECHNOLOGIES
+========================= */
+
+html[data-theme="dark"] .stack__technologies>span {
+    color:
+        rgba(224, 232, 243, 0.72);
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    border-color:
+        rgba(255, 255, 255, 0.07);
+}
+
+
+html[data-theme="dark"] .stack__technology-dot {
+    background:
+        #49a2ff;
+
+    box-shadow:
+        0 0 8px rgba(73, 162, 255, 0.65);
+}
+
+
+/* =========================
+   DARK CONNECTORS
+========================= */
+
+html[data-theme="dark"] .stack__connector {
+    background:
+        linear-gradient(90deg,
+            rgba(73, 162, 255, 0.08),
+            rgba(73, 162, 255, 0.55),
+            rgba(73, 162, 255, 0.08));
+
+    box-shadow:
+        0 0 15px rgba(18, 104, 255, 0.2);
+}
+
+
+html[data-theme="dark"] .stack__connector::after {
+    background:
+        #62abff;
+
+    border-color:
+        #061326;
+
+    box-shadow:
+        0 0 15px rgba(73, 162, 255, 0.7);
+}
+
+
+/* =========================
+   DARK BOTTOM
+========================= */
+
+html[data-theme="dark"] .stack__bottom {
+    border-top-color:
+        rgba(255, 255, 255, 0.08);
+}
+
+
+html[data-theme="dark"] .stack__bottom>span {
+    color:
+        rgba(203, 214, 229, 0.4);
+}
+
+
+html[data-theme="dark"] .stack__bottom p {
+    color:
+        rgba(235, 240, 247, 0.78);
+}
+
+
+html[data-theme="dark"] .stack__bottom a {
+    color:
+        #62abff;
+}
+
+
+html[data-theme="dark"] .stack__bottom a:hover {
+    color:
+        #ffffff;
+}
+
+
 /* =========================
    TABLET
 ========================= */
 
 @media (max-width: 1150px) {
+
     .stack {
         padding:
             135px 0 145px;
     }
+
 
     .stack__header {
         gap: 50px;
@@ -771,9 +1167,11 @@
         margin-bottom: 90px;
     }
 
+
     .stack__map {
         min-height: 760px;
     }
+
 
     .stack__group {
         width: 280px;
@@ -781,35 +1179,43 @@
         padding: 24px;
     }
 
+
     .stack__core {
         width: 255px;
         height: 255px;
     }
+
 
     .stack__core-ring--one {
         width: 300px;
         height: 300px;
     }
 
+
     .stack__core-ring--two {
         width: 350px;
         height: 350px;
     }
 
+
     .stack__core-center strong {
         font-size: 3rem;
     }
 
+
     .stack__connector {
         width: 160px;
     }
+
 }
+
 
 /* =========================
    MOBILE / TABLET
 ========================= */
 
 @media (max-width: 900px) {
+
     .stack__header {
         grid-template-columns:
             1fr;
@@ -817,9 +1223,11 @@
         gap: 30px;
     }
 
+
     .stack__intro {
         max-width: 620px;
     }
+
 
     .stack__map {
         display: flex;
@@ -830,10 +1238,12 @@
         min-height: auto;
     }
 
+
     .stack__connector,
     .stack__core-ring {
         display: none;
     }
+
 
     .stack__core,
     .stack__group {
@@ -846,11 +1256,13 @@
         transform: none;
     }
 
+
     .stack__core {
         height: auto;
 
         margin-bottom: 30px;
     }
+
 
     .stack__core-aura {
         width: 80%;
@@ -859,17 +1271,21 @@
         opacity: 0.55;
     }
 
+
     .stack__core-card {
         min-height: 360px;
     }
+
 
     .stack__group {
         min-height: auto;
     }
 
+
     .stack__group h3 {
         margin-top: 38px;
     }
+
 
     .stack__bottom {
         grid-template-columns:
@@ -879,21 +1295,26 @@
 
         margin-top: 60px;
     }
+
 }
+
 
 /* =========================
    PHONE
 ========================= */
 
 @media (max-width: 600px) {
+
     .stack {
         padding:
             95px 0 105px;
     }
 
+
     .stack__header {
         margin-bottom: 65px;
     }
+
 
     .stack__header h2 {
         font-size:
@@ -901,6 +1322,7 @@
                 13vw,
                 4.3rem);
     }
+
 
     .stack__core-card {
         min-height: 320px;
@@ -910,6 +1332,7 @@
         border-radius: 22px;
     }
 
+
     .stack__core-center strong {
         font-size:
             clamp(3rem,
@@ -917,11 +1340,13 @@
                 4.2rem);
     }
 
+
     .stack__group {
         padding: 23px;
 
         border-radius: 18px;
     }
+
 
     .stack__group h3 {
         margin-top: 35px;
@@ -929,10 +1354,13 @@
         font-size: 1.3rem;
     }
 
+
     .stack__technologies {
         margin-top: 18px;
     }
+
 }
+
 
 /* =========================
    REDUCED MOTION
@@ -952,4 +1380,5 @@
         transition-duration:
             0.01ms !important;
     }
+
 }

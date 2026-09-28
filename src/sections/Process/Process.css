@@ -1,3 +1,7 @@
+/* =========================================
+   PROCESS
+========================================= */
+
 .process {
     position: relative;
 
@@ -12,6 +16,7 @@
 
     overflow: hidden;
 }
+
 
 /* =========================
    BACKGROUND
@@ -45,6 +50,7 @@
     pointer-events: none;
 }
 
+
 .process__glow {
     position: absolute;
 
@@ -54,6 +60,7 @@
 
     pointer-events: none;
 }
+
 
 .process__glow--one {
     width: 520px;
@@ -68,6 +75,7 @@
             transparent 70%);
 }
 
+
 .process__glow--two {
     width: 450px;
     height: 450px;
@@ -80,6 +88,7 @@
             rgba(18, 104, 255, 0.08),
             transparent 70%);
 }
+
 
 /* =========================
    LAYOUT
@@ -102,6 +111,7 @@
             160px);
 }
 
+
 /* =========================
    HEADER
 ========================= */
@@ -112,6 +122,7 @@
     top:
         calc(var(--header-height) + 70px);
 }
+
 
 .process__header h2 {
     max-width: 620px;
@@ -131,10 +142,12 @@
     letter-spacing: -0.07em;
 }
 
+
 .process__header h2 span {
     color:
         var(--color-blue);
 }
+
 
 .process__header>p {
     max-width: 500px;
@@ -148,6 +161,7 @@
 
     line-height: 1.85;
 }
+
 
 /* =========================
    CONTACT
@@ -167,6 +181,7 @@
     font-size: 0.84rem;
     font-weight: 750;
 }
+
 
 .process__contact>span {
     display: grid;
@@ -188,6 +203,7 @@
         box-shadow var(--transition-normal);
 }
 
+
 .process__contact:hover>span {
     background:
         var(--color-blue);
@@ -198,6 +214,7 @@
     box-shadow:
         0 12px 28px rgba(18, 104, 255, 0.24);
 }
+
 
 .process__mini-note {
     display: flex;
@@ -222,6 +239,7 @@
         1px solid rgba(7, 20, 45, 0.08);
 }
 
+
 .process__mini-dot {
     width: 7px;
     height: 7px;
@@ -235,8 +253,10 @@
 
     box-shadow:
         0 0 0 5px rgba(18, 104, 255, 0.08),
+
         0 0 16px rgba(18, 104, 255, 0.28);
 }
+
 
 /* =========================
    TIMELINE
@@ -247,6 +267,7 @@
 
     padding-left: 70px;
 }
+
 
 .process__progress {
     position: absolute;
@@ -264,6 +285,7 @@
 
     overflow: hidden;
 }
+
 
 .process__progress-fill {
     position: absolute;
@@ -286,12 +308,14 @@
         top center;
 }
 
+
 .process__steps {
     display: flex;
     flex-direction: column;
 
     gap: 32px;
 }
+
 
 /* =========================
    STEP
@@ -300,6 +324,7 @@
 .process__step {
     position: relative;
 }
+
 
 .process__node {
     position: absolute;
@@ -312,6 +337,7 @@
 
     z-index: 3;
 }
+
 
 .process__node-glow {
     position: absolute;
@@ -332,6 +358,7 @@
 
     pointer-events: none;
 }
+
 
 .process__node-core {
     position: absolute;
@@ -365,6 +392,7 @@
     box-shadow:
         0 8px 24px rgba(18, 104, 255, 0.13);
 }
+
 
 /* =========================
    STEP CARD
@@ -400,6 +428,7 @@
         box-shadow var(--transition-normal);
 }
 
+
 .process__step-card::before {
     content: "";
 
@@ -418,6 +447,7 @@
 
     pointer-events: none;
 }
+
 
 .process__step-card::after {
     content: "";
@@ -441,6 +471,7 @@
         opacity var(--transition-normal);
 }
 
+
 .process__step:hover .process__step-card {
     transform:
         translateY(-5px);
@@ -450,12 +481,15 @@
 
     box-shadow:
         0 30px 75px rgba(6, 21, 47, 0.08),
+
         0 10px 30px rgba(18, 104, 255, 0.055);
 }
+
 
 .process__step:hover .process__step-card::after {
     opacity: 1;
 }
+
 
 /* =========================
    STEP TOP
@@ -472,12 +506,14 @@
     gap: 30px;
 }
 
+
 .process__step-top>div {
     display: flex;
     flex-direction: column;
 
     gap: 7px;
 }
+
 
 .process__step-eyebrow {
     color:
@@ -491,6 +527,7 @@
     text-transform: uppercase;
 }
 
+
 .process__step-number {
     color:
         var(--color-text-light);
@@ -500,6 +537,7 @@
 
     letter-spacing: 0.12em;
 }
+
 
 .process__step-icon {
     display: grid;
@@ -525,6 +563,7 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
+
 /* =========================
    STEP CONTENT
 ========================= */
@@ -548,6 +587,7 @@
     letter-spacing: -0.055em;
 }
 
+
 .process__step-description {
     position: relative;
     z-index: 2;
@@ -563,6 +603,7 @@
 
     line-height: 1.8;
 }
+
 
 .process__step-details {
     position: relative;
@@ -582,6 +623,7 @@
         1px solid rgba(7, 20, 45, 0.07);
 }
 
+
 .process__step-details div {
     display: inline-flex;
     align-items: center;
@@ -594,6 +636,7 @@
     font-size: 0.68rem;
     font-weight: 650;
 }
+
 
 .process__step-details div>span {
     width: 5px;
@@ -610,15 +653,315 @@
         0 0 7px rgba(18, 104, 255, 0.35);
 }
 
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html[data-theme="dark"] .process {
+    background:
+        linear-gradient(180deg,
+            #060b14 0%,
+            #07101d 48%,
+            #060b14 100%);
+}
+
+
+/* =========================
+   DARK BACKGROUND
+========================= */
+
+html[data-theme="dark"] .process::before {
+    opacity: 0.42;
+
+    background-image:
+        linear-gradient(rgba(73, 162, 255, 0.055) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(73, 162, 255, 0.055) 1px,
+            transparent 1px);
+}
+
+
+html[data-theme="dark"] .process__glow--one {
+    background:
+        radial-gradient(circle,
+            rgba(18, 104, 255, 0.17),
+            transparent 70%);
+}
+
+
+html[data-theme="dark"] .process__glow--two {
+    background:
+        radial-gradient(circle,
+            rgba(36, 146, 255, 0.13),
+            transparent 70%);
+}
+
+
+/* =========================
+   DARK HEADER
+========================= */
+
+html[data-theme="dark"] .process__header h2 {
+    color:
+        #f4f7fb;
+}
+
+
+html[data-theme="dark"] .process__header h2 span {
+    color:
+        #1268ff;
+}
+
+
+html[data-theme="dark"] .process__header>p {
+    color:
+        #8f9db1;
+}
+
+
+/* =========================
+   DARK CONTACT
+========================= */
+
+html[data-theme="dark"] .process__contact {
+    color:
+        #f4f7fb;
+}
+
+
+html[data-theme="dark"] .process__contact>span {
+    color:
+        #ffffff;
+
+    background:
+        linear-gradient(135deg,
+            #1268ff,
+            #0b57bd);
+
+    box-shadow:
+        0 8px 24px rgba(18, 104, 255, 0.15);
+}
+
+
+html[data-theme="dark"] .process__contact:hover>span {
+    background:
+        #2479ff;
+
+    box-shadow:
+        0 12px 30px rgba(18, 104, 255, 0.27);
+}
+
+
+html[data-theme="dark"] .process__mini-note {
+    color:
+        #7f8da3;
+
+    border-top-color:
+        rgba(255, 255, 255, 0.08);
+}
+
+
+html[data-theme="dark"] .process__mini-dot {
+    background:
+        #49a2ff;
+
+    box-shadow:
+        0 0 0 5px rgba(18, 104, 255, 0.12),
+
+        0 0 18px rgba(73, 162, 255, 0.42);
+}
+
+
+/* =========================
+   DARK TIMELINE
+========================= */
+
+html[data-theme="dark"] .process__progress {
+    background:
+        rgba(73, 162, 255, 0.13);
+
+    box-shadow:
+        0 0 12px rgba(18, 104, 255, 0.04);
+}
+
+
+html[data-theme="dark"] .process__progress-fill {
+    background:
+        linear-gradient(180deg,
+            #8ac1ff,
+            #49a2ff 38%,
+            #1268ff 100%);
+
+    box-shadow:
+        0 0 20px rgba(73, 162, 255, 0.5);
+}
+
+
+/* =========================
+   DARK NODES
+========================= */
+
+html[data-theme="dark"] .process__node-glow {
+    background:
+        radial-gradient(circle,
+            rgba(73, 162, 255, 0.25),
+            transparent 70%);
+}
+
+
+html[data-theme="dark"] .process__node-core {
+    color:
+        #49a2ff;
+
+    background:
+        #0d1726;
+
+    border-color:
+        rgba(73, 162, 255, 0.28);
+
+    box-shadow:
+        0 8px 26px rgba(0, 0, 0, 0.28),
+
+        0 0 18px rgba(18, 104, 255, 0.13),
+
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+
+/* =========================
+   DARK STEP CARDS
+========================= */
+
+html[data-theme="dark"] .process__step-card {
+    background:
+        linear-gradient(145deg,
+            rgba(13, 23, 38, 0.95),
+            rgba(8, 16, 29, 0.92));
+
+    border-color:
+        rgba(255, 255, 255, 0.075);
+
+    box-shadow:
+        0 22px 65px rgba(0, 0, 0, 0.22),
+
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+
+html[data-theme="dark"] .process__step-card::before {
+    background:
+        radial-gradient(circle,
+            rgba(18, 104, 255, 0.17),
+            transparent 70%);
+}
+
+
+html[data-theme="dark"] .process__step-card::after {
+    background:
+        linear-gradient(90deg,
+            transparent,
+            #49a2ff,
+            transparent);
+
+    box-shadow:
+        0 0 16px rgba(18, 104, 255, 0.3);
+}
+
+
+html[data-theme="dark"] .process__step:hover .process__step-card {
+    border-color:
+        rgba(73, 162, 255, 0.2);
+
+    box-shadow:
+        0 30px 75px rgba(0, 0, 0, 0.32),
+
+        0 10px 34px rgba(18, 104, 255, 0.1);
+}
+
+
+/* =========================
+   DARK STEP TOP
+========================= */
+
+html[data-theme="dark"] .process__step-eyebrow {
+    color:
+        #49a2ff;
+}
+
+
+html[data-theme="dark"] .process__step-number {
+    color:
+        #7f8da3;
+}
+
+
+html[data-theme="dark"] .process__step-icon {
+    color:
+        #49a2ff;
+
+    background:
+        rgba(18, 104, 255, 0.12);
+
+    border-color:
+        rgba(73, 162, 255, 0.14);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+
+        0 8px 22px rgba(18, 104, 255, 0.05);
+}
+
+
+/* =========================
+   DARK STEP CONTENT
+========================= */
+
+html[data-theme="dark"] .process__step h3 {
+    color:
+        #f4f7fb;
+}
+
+
+html[data-theme="dark"] .process__step-description {
+    color:
+        #8f9db1;
+}
+
+
+html[data-theme="dark"] .process__step-details {
+    border-top-color:
+        rgba(255, 255, 255, 0.075);
+}
+
+
+html[data-theme="dark"] .process__step-details div {
+    color:
+        #cbd6e5;
+}
+
+
+html[data-theme="dark"] .process__step-details div>span {
+    background:
+        #49a2ff;
+
+    box-shadow:
+        0 0 8px rgba(73, 162, 255, 0.5);
+}
+
+
 /* =========================
    TABLET
 ========================= */
 
 @media (max-width: 1100px) {
+
     .process {
         padding:
             130px 0 150px;
     }
+
 
     .process__layout {
         grid-template-columns:
@@ -627,31 +970,38 @@
         gap: 65px;
     }
 
+
     .process__timeline {
         padding-left: 58px;
     }
+
 
     .process__node {
         left: -58px;
     }
 
+
     .process__step-card {
         padding:
             32px;
     }
+
 }
+
 
 /* =========================
    MOBILE
 ========================= */
 
 @media (max-width: 900px) {
+
     .process__layout {
         grid-template-columns:
             1fr;
 
         gap: 80px;
     }
+
 
     .process__header {
         position: relative;
@@ -661,30 +1011,37 @@
         max-width: 720px;
     }
 
+
     .process__timeline {
         max-width: 760px;
 
         padding-left: 58px;
     }
 
+
     .process__node {
         left: -58px;
     }
+
 }
+
 
 /* =========================
    PHONE
 ========================= */
 
 @media (max-width: 600px) {
+
     .process {
         padding:
             95px 0 110px;
     }
 
+
     .process__layout {
         gap: 65px;
     }
+
 
     .process__header h2 {
         font-size:
@@ -693,13 +1050,16 @@
                 4.3rem);
     }
 
+
     .process__timeline {
         padding-left: 38px;
     }
 
+
     .process__progress {
         left: 8px;
     }
+
 
     .process__node {
         top: 23px;
@@ -709,10 +1069,12 @@
         height: 20px;
     }
 
+
     .process__node-glow {
         width: 44px;
         height: 44px;
     }
+
 
     .process__node-core {
         width: 26px;
@@ -721,9 +1083,11 @@
         font-size: 0.48rem;
     }
 
+
     .process__steps {
         gap: 22px;
     }
+
 
     .process__step-card {
         min-height: auto;
@@ -734,12 +1098,14 @@
         border-radius: 19px;
     }
 
+
     .process__step-icon {
         width: 42px;
         height: 42px;
 
         border-radius: 12px;
     }
+
 
     .process__step h3 {
         margin-top: 48px;
@@ -750,9 +1116,11 @@
                 2.8rem);
     }
 
+
     .process__step-description {
         font-size: 0.86rem;
     }
+
 
     .process__step-details {
         align-items: flex-start;
@@ -760,7 +1128,9 @@
 
         gap: 10px;
     }
+
 }
+
 
 /* =========================
    REDUCED MOTION
@@ -780,4 +1150,5 @@
         transition-duration:
             0.01ms !important;
     }
+
 }

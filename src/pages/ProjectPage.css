@@ -237,7 +237,6 @@
 
 .project-detail__hero-actions {
     display: flex;
-
     flex-wrap: wrap;
 
     gap: 12px;
@@ -425,6 +424,26 @@
     height: auto;
 
     max-width: none;
+
+    object-fit: initial;
+
+    transform:
+        none !important;
+}
+
+
+/* =========================
+   CRISTOUNE SCREENSHOT FIX
+   SUPPRESSION MARGES LATÉRALES
+========================= */
+
+.project-detail--cristoune .project-detail__hero-image {
+    width: calc(100% + 20px);
+    height: auto;
+
+    max-width: none;
+
+    margin-left: -10px;
 
     object-fit: initial;
 
@@ -707,7 +726,6 @@
     width: 90%;
 
     margin: 0;
-
     margin-right: auto;
 }
 
@@ -1080,6 +1098,7 @@
         inset 0 1px 0 color-mix(in srgb,
             #ffffff 8%,
             transparent),
+
         0 8px 25px color-mix(in srgb,
             var(--technology-color) 7%,
             transparent);
@@ -1237,6 +1256,7 @@
 
     box-shadow:
         0 24px 55px rgba(0, 0, 0, 0.32),
+
         0 0 35px color-mix(in srgb,
             var(--technology-color) 6%,
             transparent);
@@ -1451,6 +1471,318 @@
 
 
 /* ==================================================
+   DARK MODE
+================================================== */
+
+.project-detail,
+.project-detail__hero-background,
+.project-detail__features,
+.project-detail__stack,
+.project-detail__feature,
+.project-detail__browser,
+.project-detail__browser-top,
+.project-detail__stack-item {
+    transition:
+        background-color 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease,
+        color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* =========================
+   DEFAULT DARK
+========================= */
+
+html[data-theme="dark"] .project-detail {
+    --project-background: #060b14;
+    --project-surface: #0d1726;
+    --project-text: #f4f7fb;
+    --project-soft: #9aa8bb;
+}
+
+
+/* =========================
+   XENOM DARK
+========================= */
+
+html[data-theme="dark"] .project-detail--xenom {
+    --project-accent: #e12a34;
+
+    --project-background: #050607;
+    --project-surface: #0b0d0f;
+
+    --project-text: #f5f5f5;
+    --project-soft: #969ba4;
+}
+
+
+html[data-theme="dark"] .project-detail--xenom .project-detail__hero-background {
+    background:
+        radial-gradient(circle at 75% 25%,
+            rgba(225, 42, 52, 0.14),
+            transparent 30%),
+        linear-gradient(180deg,
+            #050607,
+            #080a0c);
+}
+
+
+/* =========================
+   HALAL FOOD CAEN DARK
+========================= */
+
+html[data-theme="dark"] .project-detail--halal {
+    --project-accent: #e0ad35;
+
+    --project-background: #100d09;
+    --project-surface: #17120c;
+
+    --project-text: #f8f2e7;
+    --project-soft: #b8aa98;
+}
+
+
+html[data-theme="dark"] .project-detail--halal .project-detail__hero-background {
+    background:
+        radial-gradient(circle at 75% 25%,
+            rgba(224, 173, 53, 0.14),
+            transparent 32%),
+        linear-gradient(180deg,
+            #100d09,
+            #151008);
+}
+
+
+html[data-theme="dark"] .project-detail--halal .project-detail__browser {
+    border-color:
+        rgba(224, 173, 53, 0.14);
+
+    box-shadow:
+        0 50px 130px rgba(0, 0, 0, 0.34);
+}
+
+
+html[data-theme="dark"] .project-detail--halal .project-detail__browser-top {
+    border-bottom-color:
+        rgba(255, 255, 255, 0.07);
+}
+
+
+html[data-theme="dark"] .project-detail--halal .project-detail__browser-screen,
+
+html[data-theme="dark"] .project-detail--halal .project-detail__gallery-image {
+    background:
+        #fffaf1;
+}
+
+
+html[data-theme="dark"] .project-detail--halal .project-detail__feature {
+    border-color:
+        rgba(224, 173, 53, 0.12);
+}
+
+
+html[data-theme="dark"] .project-detail--halal .project-detail__gallery-image {
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.28);
+}
+
+
+html[data-theme="dark"] .project-detail--halal .project-detail__stack-item {
+    background:
+        linear-gradient(145deg,
+            #19140e,
+            #110e0a);
+
+    border-color:
+        rgba(224, 173, 53, 0.1);
+
+    box-shadow:
+        0 16px 42px rgba(0, 0, 0, 0.2);
+}
+
+
+html[data-theme="dark"] .project-detail--halal .project-detail__stack-item:hover {
+    border-color:
+        color-mix(in srgb,
+            var(--technology-color) 32%,
+            rgba(224, 173, 53, 0.08));
+
+    box-shadow:
+        0 24px 55px rgba(0, 0, 0, 0.3),
+
+        0 0 34px color-mix(in srgb,
+            var(--technology-color) 6%,
+            transparent);
+}
+
+
+html[data-theme="dark"] .project-detail--halal .project-detail__stack-icon {
+    background:
+        color-mix(in srgb,
+            var(--technology-color) 10%,
+            #17120c);
+}
+
+
+html[data-theme="dark"] .project-detail--halal .project-detail__stack-icon-badge {
+    border-color:
+        #17120c;
+}
+
+
+/* =========================
+   CRISTOUNE CRÉATION DARK
+========================= */
+
+html[data-theme="dark"] .project-detail--cristoune {
+    --project-accent: #c59bd8;
+
+    --project-background: #120d14;
+    --project-surface: #1a121d;
+
+    --project-text: #f7f0f8;
+    --project-soft: #b7a7ba;
+}
+
+
+html[data-theme="dark"] .project-detail--cristoune .project-detail__hero-background {
+    background:
+        radial-gradient(circle at 75% 25%,
+            rgba(197, 155, 216, 0.15),
+            transparent 32%),
+        linear-gradient(180deg,
+            #120d14,
+            #19111c);
+}
+
+
+html[data-theme="dark"] .project-detail--cristoune .project-detail__browser {
+    border-color:
+        rgba(197, 155, 216, 0.14);
+
+    box-shadow:
+        0 50px 130px rgba(0, 0, 0, 0.34);
+}
+
+
+html[data-theme="dark"] .project-detail--cristoune .project-detail__browser-top {
+    border-bottom-color:
+        rgba(255, 255, 255, 0.07);
+}
+
+
+/*
+ * Les captures restent sur leur fond ivoire
+ * afin de respecter le véritable site CrisToune.
+ */
+
+html[data-theme="dark"] .project-detail--cristoune .project-detail__browser-screen,
+
+html[data-theme="dark"] .project-detail--cristoune .project-detail__gallery-image {
+    background:
+        #fbf7f2;
+}
+
+
+html[data-theme="dark"] .project-detail--cristoune .project-detail__feature {
+    border-color:
+        rgba(197, 155, 216, 0.12);
+}
+
+
+html[data-theme="dark"] .project-detail--cristoune .project-detail__gallery-image {
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.28);
+}
+
+
+html[data-theme="dark"] .project-detail--cristoune .project-detail__stack-item {
+    background:
+        linear-gradient(145deg,
+            #1d1520,
+            #140f17);
+
+    border-color:
+        rgba(197, 155, 216, 0.1);
+
+    box-shadow:
+        0 16px 42px rgba(0, 0, 0, 0.2);
+}
+
+
+html[data-theme="dark"] .project-detail--cristoune .project-detail__stack-item:hover {
+    border-color:
+        color-mix(in srgb,
+            var(--technology-color) 32%,
+            rgba(197, 155, 216, 0.08));
+
+    box-shadow:
+        0 24px 55px rgba(0, 0, 0, 0.3),
+
+        0 0 34px color-mix(in srgb,
+            var(--technology-color) 6%,
+            transparent);
+}
+
+
+html[data-theme="dark"] .project-detail--cristoune .project-detail__stack-icon {
+    background:
+        color-mix(in srgb,
+            var(--technology-color) 10%,
+            #1a121d);
+}
+
+
+html[data-theme="dark"] .project-detail--cristoune .project-detail__stack-icon-badge {
+    border-color:
+        #1a121d;
+}
+
+
+/* =========================
+   SHARED DARK DETAILS
+========================= */
+
+html[data-theme="dark"] .project-detail__secondary-button {
+    background:
+        color-mix(in srgb,
+            var(--project-surface) 72%,
+            transparent);
+}
+
+
+html[data-theme="dark"] .project-detail__secondary-button:hover {
+    background:
+        color-mix(in srgb,
+            var(--project-accent) 10%,
+            var(--project-surface));
+}
+
+
+html[data-theme="dark"] .project-detail__role {
+    border-top-color:
+        color-mix(in srgb,
+            var(--project-text) 10%,
+            transparent);
+}
+
+
+html[data-theme="dark"] .project-detail__feature {
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+
+html[data-theme="dark"] .project-detail__cta-box {
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.24);
+}
+
+
+/* ==================================================
    NOT FOUND
 ================================================== */
 
@@ -1513,6 +1845,7 @@
         grid-column:
             1 / -1;
     }
+
 }
 
 
@@ -1798,6 +2131,7 @@
 
         border-radius: 22px;
     }
+
 }
 
 
@@ -1837,6 +2171,7 @@
     .project-detail__stack-name {
         font-size: 0.69rem;
     }
+
 }
 
 
@@ -1858,4 +2193,5 @@
         transition-duration:
             0.01ms !important;
     }
+
 }
