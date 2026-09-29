@@ -414,7 +414,7 @@ export default function Stack() {
                     </p>
 
                     <a
-                        href="mailto:r.digitalcorporation@gmail.com"
+                        href="mailto:r.digit.contact@gmail.com"
                     >
                         Parler de votre projet
 

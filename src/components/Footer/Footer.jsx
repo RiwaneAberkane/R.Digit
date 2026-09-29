@@ -38,7 +38,7 @@ export default function Footer() {
 
                         <div>
                             <strong>
-                                R DIGITAL
+                                R.DIGIT
                             </strong>
 
                             <span>
@@ -73,7 +73,7 @@ export default function Footer() {
                     </nav>
 
                     <a
-                        href="mailto:r.digitalcorporation@gmail.com"
+                        href="mailto:r.digit.contact@gmail.com"
                         className="footer__email"
                     >
                         Me contacter
@@ -87,7 +87,7 @@ export default function Footer() {
 
                 <div className="footer__statement">
                     <span>
-                        R DIGITAL
+                        R.DIGIT
                     </span>
 
                     <h2>
@@ -106,7 +106,7 @@ export default function Footer() {
 
                 <div className="footer__bottom">
                     <p>
-                        © 2026 R Digital.
+                        © 2026 R Digit.
                         Tous droits réservés.
                     </p>
 

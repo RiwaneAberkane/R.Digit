@@ -231,7 +231,7 @@ export default function Hero() {
 
                     <div className="hero__actions">
                         <a
-                            href="mailto:r.digitalcorporation@gmail.com"
+                            href="mailto:r.digit.contact@gmail.com"
                             className="hero__button hero__button--primary"
                         >
                             <span>
@@ -285,7 +285,7 @@ export default function Hero() {
                                 </div>
 
                                 <div className="hero__window-address">
-                                    r-digital.dev
+                                    r-digit.dev
                                 </div>
 
                                 <div className="hero__window-status">

@@ -231,7 +231,7 @@ export default function Header() {
                     </span>
 
                     <span className="header__brand-text">
-                        R.DIGITAL
+                        R.DIGIT
                     </span>
                 </a>
 
@@ -332,7 +332,7 @@ export default function Header() {
                     {/* CTA DESKTOP */}
 
                     <a
-                        href="mailto:r.digitalcorporation@gmail.com"
+                        href="mailto:r.digit.contact@gmail.com"
                         className="header__contact"
                     >
                         Discutons
@@ -489,11 +489,11 @@ export default function Header() {
 
 
                         <a
-                            href="mailto:r.digitalcorporation@gmail.com"
+                            href="mailto:r.digit.contact@gmail.com"
                             className="header__mobile-contact"
                         >
                             <span>
-                                r.digitalcorporation@gmail.com
+                                r.digit.contact@gmail.com
                             </span>
 
                             <span className="header__mobile-contact-icon">
@@ -507,7 +507,7 @@ export default function Header() {
 
                         <div className="header__mobile-footer">
                             <span>
-                                R DIGITAL
+                                R.DIGIT
                             </span>
 
                             <span>

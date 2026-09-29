@@ -274,7 +274,7 @@ export default function Process() {
                         </p>
 
                         <a
-                            href="mailto:r.digitalcorporation@gmail.com"
+                            href="mailto:r.digit.contact@gmail.com"
                             className="process__contact"
                         >
                             Discuter de votre projet

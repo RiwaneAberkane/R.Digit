@@ -262,7 +262,7 @@ export default function About() {
                         </p>
 
                         <a
-                            href="mailto:r.digitalcorporation@gmail.com"
+                            href="mailto:r.digit.contact@gmail.com"
                             className="about__contact-link"
                         >
                             Parlons de votre projet

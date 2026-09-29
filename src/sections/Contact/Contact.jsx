@@ -16,7 +16,7 @@ import { gsap } from '../../utils/gsap';
 import './Contact.css';
 
 const EMAIL =
-    'r.digitalcorporation@gmail.com';
+    'r.digit.contact@gmail.com';
 
 export default function Contact() {
     const sectionRef = useRef(null);

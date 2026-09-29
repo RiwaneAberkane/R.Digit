@@ -421,7 +421,7 @@ export default function ProjectPage() {
 
                 <title>
                     {project.name} — R
-                    Digital
+                    Digit
                 </title>
 
                 <meta
@@ -611,7 +611,7 @@ export default function ProjectPage() {
 
 
                                     <span className="project-detail__browser-brand">
-                                        R DIGITAL
+                                        R DIGIT
                                     </span>
                                 </div>
 
@@ -952,7 +952,7 @@ export default function ProjectPage() {
 
 
                             <a
-                                href="mailto:r.digitalcorporation@gmail.com"
+                                href="mailto:r.digit.contact@gmail.com"
                                 className="project-detail__cta-link"
                             >
                                 Parlons de votre

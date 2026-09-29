@@ -17,12 +17,12 @@ export default function Home() {
                 <html lang="fr" />
 
                 {/* Titre de l'onglet */}
-                <title>R.Digital — Développeur Web & Designer</title>
+                <title>R.Digit — Développeur Web & Designer</title>
 
                 {/* SEO principal */}
                 <meta
                     name="description"
-                    content="R.Digital conçoit des sites web modernes, performants et sur mesure, du design au développement."
+                    content="R.Digit conçoit des sites web modernes, performants et sur mesure, du design au développement."
                 />
 
                 <meta
@@ -39,7 +39,7 @@ export default function Home() {
                 {/* Open Graph */}
                 <meta
                     property="og:title"
-                    content="R.Digital — Portfolio"
+                    content="R.Digit — Portfolio"
                 />
 
                 <meta
@@ -54,7 +54,7 @@ export default function Home() {
 
                 <meta
                     property="og:site_name"
-                    content="R.Digital"
+                    content="R.Digit"
                 />
 
                 {/* Twitter / X */}
@@ -65,7 +65,7 @@ export default function Home() {
 
                 <meta
                     name="twitter:title"
-                    content="R.Digital — Portfolio"
+                    content="R.Digit — Portfolio"
                 />
 
                 <meta
