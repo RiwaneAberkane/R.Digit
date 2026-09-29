@@ -13,15 +13,12 @@ import Home from '../pages/Home';
 import ProjectPage from '../pages/ProjectPage';
 
 function ScrollManager() {
-    const location =
-        useLocation();
+    const {
+        pathname,
+        hash,
+    } = useLocation();
 
     useEffect(() => {
-        const {
-            pathname,
-            hash,
-        } = location;
-
         if (hash) {
             const id =
                 decodeURIComponent(
@@ -71,8 +68,8 @@ function ScrollManager() {
             behavior: 'auto',
         });
     }, [
-        location.pathname,
-        location.hash,
+        pathname,
+        hash,
     ]);
 
     return null;

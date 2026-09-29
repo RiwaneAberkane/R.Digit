@@ -832,7 +832,7 @@
  *
  * Le dark mode ne change donc pas sa direction artistique :
  * il approfondit simplement le fond et raccorde la section
- * aux autres sections dark de R Digital.
+ * aux autres sections dark de R.Digit.
  */
 
 html[data-theme="dark"] .stack {

@@ -256,7 +256,7 @@ export default function Contact() {
                         </div>
 
                         <span className="contact__signature">
-                            R DIGITAL · 2026
+                            R.DIGIT · 2026
                         </span>
                     </div>
                 </div>

@@ -308,7 +308,7 @@ export default function Hero() {
                                 <div className="hero__interface">
                                     <div className="hero__interface-header">
                                         <span>
-                                            R DIGITAL
+                                            R.DIGIT
                                         </span>
 
                                         <span>

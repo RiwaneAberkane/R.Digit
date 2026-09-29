@@ -288,7 +288,7 @@ export default function About() {
 
                                     <div>
                                         <strong>
-                                            R DIGITAL
+                                            R.DIGIT
                                         </strong>
 
                                         <span>
@@ -355,7 +355,7 @@ export default function About() {
 
                             <div className="about__visual-footer">
                                 <span>
-                                    R DIGITAL
+                                    R.DIGIT
                                 </span>
 
                                 <span className="about__visual-line" />

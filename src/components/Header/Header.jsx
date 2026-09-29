@@ -11,7 +11,7 @@ import {
     X,
 } from 'lucide-react';
 
-import logoRDigital from '../../assets/images/logo-rdigital.png';
+import logoRDigit from '../../assets/images/logo-rdigit.png';
 
 import './Header.css';
 
@@ -51,7 +51,7 @@ const getInitialTheme = () => {
 
     const savedTheme =
         window.localStorage.getItem(
-            'r-digital-theme',
+            'r-digit-theme',
         );
 
     if (
@@ -92,7 +92,7 @@ export default function Header() {
             theme;
 
         window.localStorage.setItem(
-            'r-digital-theme',
+            'r-digit-theme',
             theme,
         );
     }, [theme]);
@@ -214,7 +214,7 @@ export default function Header() {
                 <a
                     href="/#hero"
                     className="header__brand"
-                    aria-label="R Digital - Accueil"
+                    aria-label="R.Digit - Accueil"
                     onClick={(event) =>
                         scrollToSection(
                             event,
@@ -224,7 +224,7 @@ export default function Header() {
                 >
                     <span className="header__logo">
                         <img
-                            src={logoRDigital}
+                            src={logoRDigit}
                             alt=""
                             className="header__logo-image"
                         />

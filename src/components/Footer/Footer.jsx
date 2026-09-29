@@ -30,7 +30,7 @@ export default function Footer() {
                     <a
                         href="/#hero"
                         className="footer__brand"
-                        aria-label="R Digital - Accueil"
+                        aria-label="R.Digit - Accueil"
                     >
                         <span className="footer__logo">
                             R
@@ -106,7 +106,7 @@ export default function Footer() {
 
                 <div className="footer__bottom">
                     <p>
-                        © 2026 R Digit.
+                        © 2026 R.Digit.
                         Tous droits réservés.
                     </p>
 

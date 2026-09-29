@@ -308,7 +308,7 @@ export default function Stack() {
                                 </span>
 
                                 <span>
-                                    R DIGITAL
+                                    R.DIGIT
                                 </span>
                             </div>
 

@@ -438,7 +438,7 @@ export default function ProjectPage() {
 
                 <meta
                     property="og:title"
-                    content={`${project.name} — R Digital`}
+                    content={`${project.name} — R.Digit`}
                 />
 
                 <meta
