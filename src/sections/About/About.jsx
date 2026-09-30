@@ -11,6 +11,7 @@ import {
     Zap,
 } from 'lucide-react';
 
+import { SITE } from '../../config/site';
 import { gsap } from '../../utils/gsap';
 
 import './About.css';
@@ -20,27 +21,34 @@ const values = [
         icon: MessagesSquare,
         number: '01',
         title: 'Écoute',
+
         text:
             'Comprendre le besoin avant de commencer à construire.',
     },
+
     {
         icon: PenTool,
         number: '02',
         title: 'Sur mesure',
+
         text:
             'Créer une solution adaptée au projet plutôt qu’un site générique.',
     },
+
     {
         icon: Zap,
         number: '03',
         title: 'Réactivité',
+
         text:
             'Rester disponible, avancer clairement et communiquer rapidement.',
     },
+
     {
         icon: HeartHandshake,
         number: '04',
         title: 'Implication',
+
         text:
             'Porter le projet avec le client jusqu’à obtenir un résultat satisfaisant.',
     },
@@ -61,6 +69,7 @@ export default function About() {
                     reduceMotion:
                         '(prefers-reduced-motion: reduce)',
                 },
+
                 (context) => {
                     const {
                         desktop,
@@ -262,7 +271,7 @@ export default function About() {
                         </p>
 
                         <a
-                            href="mailto:r.digit.contact@gmail.com"
+                            href={`mailto:${SITE.email}`}
                             className="about__contact-link"
                         >
                             Parlons de votre projet
@@ -401,6 +410,7 @@ export default function About() {
                                 key={number}
                                 className={[
                                     'about__value',
+
                                     `about__value--${index + 1}`,
                                 ].join(' ')}
                             >

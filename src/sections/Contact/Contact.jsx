@@ -11,12 +11,10 @@ import {
     Mail,
 } from 'lucide-react';
 
+import { SITE } from '../../config/site';
 import { gsap } from '../../utils/gsap';
 
 import './Contact.css';
-
-const EMAIL =
-    'r.digit.contact@gmail.com';
 
 export default function Contact() {
     const sectionRef = useRef(null);
@@ -33,6 +31,7 @@ export default function Contact() {
                     reduceMotion:
                         '(prefers-reduced-motion: reduce)',
                 },
+
                 (context) => {
                     const {
                         reduceMotion,
@@ -132,7 +131,7 @@ export default function Contact() {
     const handleCopy = async () => {
         try {
             await navigator.clipboard.writeText(
-                EMAIL,
+                SITE.email,
             );
 
             setCopied(true);
@@ -183,7 +182,7 @@ export default function Contact() {
 
                     <div className="contact__actions">
                         <a
-                            href={`mailto:${EMAIL}`}
+                            href={`mailto:${SITE.email}`}
                             className="contact__mail"
                         >
                             <span className="contact__mail-icon">
@@ -199,7 +198,7 @@ export default function Contact() {
                                 </small>
 
                                 <strong>
-                                    {EMAIL}
+                                    {SITE.email}
                                 </strong>
                             </span>
 

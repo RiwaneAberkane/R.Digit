@@ -1,4 +1,5 @@
 import { useLayoutEffect, useRef } from 'react';
+
 import {
     ArrowDown,
     ArrowRight,
@@ -7,6 +8,7 @@ import {
     Sparkles,
 } from 'lucide-react';
 
+import { SITE } from '../../config/site';
 import { gsap } from '../../utils/gsap';
 
 import './Hero.css';
@@ -65,6 +67,7 @@ export default function Hero() {
                             opacity: 0,
                             duration: 0.65,
                         })
+
                         .from(
                             '.hero__title-line',
                             {
@@ -75,6 +78,7 @@ export default function Hero() {
                             },
                             '-=0.3',
                         )
+
                         .from(
                             '.hero__description',
                             {
@@ -84,6 +88,7 @@ export default function Hero() {
                             },
                             '-=0.45',
                         )
+
                         .from(
                             '.hero__actions',
                             {
@@ -93,6 +98,7 @@ export default function Hero() {
                             },
                             '-=0.45',
                         )
+
                         .from(
                             '.hero__meta',
                             {
@@ -102,6 +108,7 @@ export default function Hero() {
                             },
                             '-=0.4',
                         )
+
                         .from(
                             '.hero__visual',
                             {
@@ -113,6 +120,7 @@ export default function Hero() {
                             },
                             '-=0.95',
                         )
+
                         .from(
                             '.hero__floating-card',
                             {
@@ -125,54 +133,90 @@ export default function Hero() {
                         );
 
                     if (desktop) {
-                        gsap.to('.hero__visual-inner', {
-                            y: 55,
-                            rotateX: -3,
-                            scale: 0.96,
+                        gsap.to(
+                            '.hero__visual-inner',
+                            {
+                                y: 55,
+                                rotateX: -3,
+                                scale: 0.96,
 
-                            scrollTrigger: {
-                                trigger: heroRef.current,
-                                start: 'top top',
-                                end: 'bottom top',
-                                scrub: 1,
+                                scrollTrigger: {
+                                    trigger:
+                                        heroRef.current,
+
+                                    start:
+                                        'top top',
+
+                                    end:
+                                        'bottom top',
+
+                                    scrub: 1,
+                                },
                             },
-                        });
+                        );
 
-                        gsap.to('.hero__content', {
-                            y: -35,
-                            opacity: 0.45,
+                        gsap.to(
+                            '.hero__content',
+                            {
+                                y: -35,
+                                opacity: 0.45,
 
-                            scrollTrigger: {
-                                trigger: heroRef.current,
-                                start: '40% top',
-                                end: 'bottom top',
-                                scrub: 1,
+                                scrollTrigger: {
+                                    trigger:
+                                        heroRef.current,
+
+                                    start:
+                                        '40% top',
+
+                                    end:
+                                        'bottom top',
+
+                                    scrub: 1,
+                                },
                             },
-                        });
+                        );
 
-                        gsap.to('.hero__glow--one', {
-                            x: 80,
-                            y: 40,
+                        gsap.to(
+                            '.hero__glow--one',
+                            {
+                                x: 80,
+                                y: 40,
 
-                            scrollTrigger: {
-                                trigger: heroRef.current,
-                                start: 'top top',
-                                end: 'bottom top',
-                                scrub: 1.5,
+                                scrollTrigger: {
+                                    trigger:
+                                        heroRef.current,
+
+                                    start:
+                                        'top top',
+
+                                    end:
+                                        'bottom top',
+
+                                    scrub: 1.5,
+                                },
                             },
-                        });
+                        );
 
-                        gsap.to('.hero__glow--two', {
-                            x: -60,
-                            y: -30,
+                        gsap.to(
+                            '.hero__glow--two',
+                            {
+                                x: -60,
+                                y: -30,
 
-                            scrollTrigger: {
-                                trigger: heroRef.current,
-                                start: 'top top',
-                                end: 'bottom top',
-                                scrub: 1.8,
+                                scrollTrigger: {
+                                    trigger:
+                                        heroRef.current,
+
+                                    start:
+                                        'top top',
+
+                                    end:
+                                        'bottom top',
+
+                                    scrub: 1.8,
+                                },
                             },
-                        });
+                        );
                     }
                 },
             );
@@ -231,7 +275,7 @@ export default function Hero() {
 
                     <div className="hero__actions">
                         <a
-                            href="mailto:r.digit.contact@gmail.com"
+                            href={`mailto:${SITE.email}`}
                             className="hero__button hero__button--primary"
                         >
                             <span>
@@ -285,7 +329,7 @@ export default function Hero() {
                                 </div>
 
                                 <div className="hero__window-address">
-                                    r-digit.dev
+                                    rdigit.fr
                                 </div>
 
                                 <div className="hero__window-status">

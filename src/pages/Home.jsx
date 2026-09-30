@@ -10,41 +10,81 @@ import Process from '../sections/Process/Process';
 import Stack from '../sections/Stack/Stack';
 import Contact from '../sections/Contact/Contact';
 
+import {
+    SITE,
+    getAbsoluteUrl,
+} from '../config/site';
+
 export default function Home() {
+    const pageUrl = getAbsoluteUrl('/');
+    const socialImageUrl = getAbsoluteUrl(
+        SITE.socialImage,
+    );
+
+    const structuredData = {
+        '@context': 'https://schema.org',
+        '@graph': [
+            {
+                '@type': 'WebSite',
+                '@id': `${pageUrl}#website`,
+                name: SITE.name,
+                url: pageUrl,
+                description: SITE.description,
+                inLanguage: 'fr-FR',
+            },
+            {
+                '@type': 'Organization',
+                '@id': `${pageUrl}#organization`,
+                name: SITE.name,
+                url: pageUrl,
+                logo: getAbsoluteUrl(
+                    '/logo.png',
+                ),
+                email: SITE.email,
+                description:
+                    SITE.description,
+            },
+        ],
+    };
+
     return (
         <div className="page">
             <Helmet>
                 <html lang="fr" />
 
-                {/* Titre de l'onglet */}
-                <title>R.Digit — Développeur Web & Designer</title>
+                <title>
+                    {SITE.title}
+                </title>
 
-                {/* SEO principal */}
                 <meta
                     name="description"
-                    content="R.Digit conçoit des sites web modernes, performants et sur mesure, du design au développement."
+                    content={SITE.description}
                 />
 
                 <meta
                     name="robots"
-                    content="index, follow"
+                    content="index, follow, max-image-preview:large"
                 />
 
-                {/* Couleur navigateur */}
+                <link
+                    rel="canonical"
+                    href={pageUrl}
+                />
+
                 <meta
                     name="theme-color"
-                    content="#06152c"
+                    content="#1268ff"
                 />
 
                 {/* Open Graph */}
                 <meta
                     property="og:title"
-                    content="R.Digit — Portfolio"
+                    content={SITE.title}
                 />
 
                 <meta
                     property="og:description"
-                    content="Création de sites web modernes, performants et sur mesure, du design au développement."
+                    content={SITE.description}
                 />
 
                 <meta
@@ -53,8 +93,38 @@ export default function Home() {
                 />
 
                 <meta
+                    property="og:url"
+                    content={pageUrl}
+                />
+
+                <meta
                     property="og:site_name"
-                    content="R.Digit"
+                    content={SITE.name}
+                />
+
+                <meta
+                    property="og:locale"
+                    content="fr_FR"
+                />
+
+                <meta
+                    property="og:image"
+                    content={socialImageUrl}
+                />
+
+                <meta
+                    property="og:image:width"
+                    content="1200"
+                />
+
+                <meta
+                    property="og:image:height"
+                    content="630"
+                />
+
+                <meta
+                    property="og:image:alt"
+                    content="R.Digit — Développement et design web"
                 />
 
                 {/* Twitter / X */}
@@ -65,13 +135,30 @@ export default function Home() {
 
                 <meta
                     name="twitter:title"
-                    content="R.Digit — Portfolio"
+                    content={SITE.title}
                 />
 
                 <meta
                     name="twitter:description"
-                    content="Création de sites web modernes, performants et sur mesure."
+                    content={SITE.description}
                 />
+
+                <meta
+                    name="twitter:image"
+                    content={socialImageUrl}
+                />
+
+                <meta
+                    name="twitter:image:alt"
+                    content="R.Digit — Développement et design web"
+                />
+
+                {/* Données structurées */}
+                <script type="application/ld+json">
+                    {JSON.stringify(
+                        structuredData,
+                    )}
+                </script>
             </Helmet>
 
             <Header />

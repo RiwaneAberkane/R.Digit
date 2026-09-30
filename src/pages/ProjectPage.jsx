@@ -38,6 +38,11 @@ import {
     getProjectBySlug,
 } from '../data/projects';
 
+import {
+    SITE,
+    getAbsoluteUrl,
+} from '../config/site';
+
 import { gsap } from '../utils/gsap';
 
 import './ProjectPage.css';
@@ -177,6 +182,17 @@ export default function ProjectPage() {
 
     const pageRef = useRef(null);
 
+    const projectUrl = project
+        ? getAbsoluteUrl(
+            `/projets/${project.slug}`,
+        )
+        : null;
+
+    const socialImageUrl =
+        getAbsoluteUrl(
+            SITE.socialImage,
+        );
+
 
     /* =====================================
        ANIMATIONS
@@ -247,16 +263,13 @@ export default function ProjectPage() {
                                 },
                             );
 
-
                         timeline
                             .from(
                                 '.project-detail__eyebrow',
                                 {
                                     y: 18,
-
                                     opacity:
                                         0,
-
                                     duration:
                                         0.6,
                                 },
@@ -266,14 +279,11 @@ export default function ProjectPage() {
                                 '.project-detail__title',
                                 {
                                     y: 55,
-
                                     opacity:
                                         0,
-
                                     duration:
                                         0.9,
                                 },
-
                                 '-=0.25',
                             )
 
@@ -281,14 +291,11 @@ export default function ProjectPage() {
                                 '.project-detail__lead',
                                 {
                                     y: 30,
-
                                     opacity:
                                         0,
-
                                     duration:
                                         0.7,
                                 },
-
                                 '-=0.45',
                             )
 
@@ -296,14 +303,11 @@ export default function ProjectPage() {
                                 '.project-detail__hero-actions',
                                 {
                                     y: 20,
-
                                     opacity:
                                         0,
-
                                     duration:
                                         0.6,
                                 },
-
                                 '-=0.4',
                             )
 
@@ -311,17 +315,13 @@ export default function ProjectPage() {
                                 '.project-detail__hero-visual',
                                 {
                                     y: 60,
-
                                     scale:
                                         0.96,
-
                                     opacity:
                                         0,
-
                                     duration:
                                         1.1,
                                 },
-
                                 '-=0.6',
                             );
 
@@ -343,13 +343,10 @@ export default function ProjectPage() {
                                     element,
                                     {
                                         y: 50,
-
                                         opacity:
                                             0,
-
                                         duration:
                                             0.85,
-
                                         ease:
                                             'power3.out',
 
@@ -357,7 +354,6 @@ export default function ProjectPage() {
                                         {
                                             trigger:
                                                 element,
-
                                             start:
                                                 'top 86%',
                                         },
@@ -368,14 +364,12 @@ export default function ProjectPage() {
                     },
                 );
 
-
                 return () =>
                     mm.revert();
             },
 
             pageRef,
         );
-
 
         return () =>
             ctx.revert();
@@ -388,22 +382,79 @@ export default function ProjectPage() {
 
     if (!project) {
         return (
-            <main
-                id="main-content"
-                className="project-not-found"
-            >
-                <div>
-                    <h1>
-                        Projet introuvable.
-                    </h1>
+            <>
+                <Helmet>
+                    <html lang="fr" />
 
-                    <Link to="/">
-                        Retour à l’accueil
-                    </Link>
-                </div>
-            </main>
+                    <title>
+                        Projet introuvable | R.Digit
+                    </title>
+
+                    <meta
+                        name="robots"
+                        content="noindex, nofollow"
+                    />
+                </Helmet>
+
+                <main
+                    id="main-content"
+                    className="project-not-found"
+                >
+                    <div>
+                        <h1>
+                            Projet introuvable.
+                        </h1>
+
+                        <Link to="/">
+                            Retour à l’accueil
+                        </Link>
+                    </div>
+                </main>
+            </>
         );
     }
+
+
+    /* =====================================
+       STRUCTURED DATA
+    ===================================== */
+
+    const structuredData = {
+        '@context':
+            'https://schema.org',
+
+        '@type':
+            'CreativeWork',
+
+        name:
+            project.name,
+
+        description:
+            project.shortDescription,
+
+        url:
+            projectUrl,
+
+        image:
+            socialImageUrl,
+
+        inLanguage:
+            'fr-FR',
+
+        creator: {
+            '@type':
+                'Organization',
+
+            name:
+                SITE.name,
+
+            url:
+                SITE.url,
+        },
+
+        keywords:
+            project.stack.join(', '),
+    };
 
 
     /* =====================================
@@ -420,8 +471,7 @@ export default function ProjectPage() {
                 <html lang="fr" />
 
                 <title>
-                    {project.name} — R
-                    Digit
+                    {project.name} — Projet web | R.Digit
                 </title>
 
                 <meta
@@ -433,12 +483,20 @@ export default function ProjectPage() {
 
                 <meta
                     name="robots"
-                    content="index, follow"
+                    content="index, follow, max-image-preview:large"
                 />
+
+                <link
+                    rel="canonical"
+                    href={projectUrl}
+                />
+
+
+                {/* OPEN GRAPH */}
 
                 <meta
                     property="og:title"
-                    content={`${project.name} — R.Digit`}
+                    content={`${project.name} — Projet web | R.Digit`}
                 />
 
                 <meta
@@ -452,6 +510,84 @@ export default function ProjectPage() {
                     property="og:type"
                     content="website"
                 />
+
+                <meta
+                    property="og:url"
+                    content={projectUrl}
+                />
+
+                <meta
+                    property="og:site_name"
+                    content={SITE.name}
+                />
+
+                <meta
+                    property="og:locale"
+                    content="fr_FR"
+                />
+
+                <meta
+                    property="og:image"
+                    content={
+                        socialImageUrl
+                    }
+                />
+
+                <meta
+                    property="og:image:width"
+                    content="1200"
+                />
+
+                <meta
+                    property="og:image:height"
+                    content="630"
+                />
+
+                <meta
+                    property="og:image:alt"
+                    content={`${project.name} — Projet réalisé par R.Digit`}
+                />
+
+
+                {/* TWITTER / X */}
+
+                <meta
+                    name="twitter:card"
+                    content="summary_large_image"
+                />
+
+                <meta
+                    name="twitter:title"
+                    content={`${project.name} — Projet web | R.Digit`}
+                />
+
+                <meta
+                    name="twitter:description"
+                    content={
+                        project.shortDescription
+                    }
+                />
+
+                <meta
+                    name="twitter:image"
+                    content={
+                        socialImageUrl
+                    }
+                />
+
+                <meta
+                    name="twitter:image:alt"
+                    content={`${project.name} — Projet réalisé par R.Digit`}
+                />
+
+
+                {/* STRUCTURED DATA */}
+
+                <script type="application/ld+json">
+                    {JSON.stringify(
+                        structuredData,
+                    )}
+                </script>
             </Helmet>
 
 
@@ -471,7 +607,6 @@ export default function ProjectPage() {
                 ref={pageRef}
                 className={[
                     'project-detail',
-
                     `project-detail--${project.theme}`,
                 ].join(' ')}
             >
@@ -505,7 +640,6 @@ export default function ProjectPage() {
                                 projets
                             </Link>
 
-
                             <span className="project-detail__counter">
                                 {
                                     project.number
@@ -524,13 +658,11 @@ export default function ProjectPage() {
                                 }
                             </span>
 
-
                             <h1 className="project-detail__title">
                                 {
                                     project.name
                                 }
                             </h1>
-
 
                             <p className="project-detail__lead">
                                 {
@@ -565,7 +697,6 @@ export default function ProjectPage() {
                                         />
                                     </a>
                                 )}
-
 
                                 <a
                                     href="#project-content"
@@ -602,13 +733,11 @@ export default function ProjectPage() {
                                         <span />
                                     </div>
 
-
                                     <span className="project-detail__browser-address">
                                         {
                                             project.slug
                                         }
                                     </span>
-
 
                                     <span className="project-detail__browser-brand">
                                         R DIGIT
@@ -655,11 +784,9 @@ export default function ProjectPage() {
                                     01
                                 </span>
 
-
                                 <span className="project-detail__section-label">
                                     Le projet
                                 </span>
-
 
                                 <h2>
                                     Une expérience
@@ -667,7 +794,6 @@ export default function ProjectPage() {
                                     univers.
                                 </h2>
                             </div>
-
 
                             <div className="project-detail__overview-copy">
                                 <p>
@@ -722,7 +848,6 @@ export default function ProjectPage() {
                                 </span>
                             </div>
 
-
                             <h2>
                                 Ce qui structure
                                 l’expérience.
@@ -753,13 +878,11 @@ export default function ProjectPage() {
                                             }
                                         </span>
 
-
                                         <h3>
                                             {
                                                 feature.title
                                             }
                                         </h3>
-
 
                                         <p>
                                             {
@@ -793,7 +916,6 @@ export default function ProjectPage() {
                                     Interface
                                 </span>
                             </div>
-
 
                             <h2>
                                 Le projet en
@@ -846,14 +968,12 @@ export default function ProjectPage() {
                                             />
                                         </div>
 
-
                                         <figcaption>
                                             <span>
                                                 {
                                                     item.label
                                                 }
                                             </span>
-
 
                                             <h3>
                                                 {
@@ -885,11 +1005,9 @@ export default function ProjectPage() {
                                     04
                                 </span>
 
-
                                 <span className="project-detail__section-label">
                                     Technologies
                                 </span>
-
 
                                 <h2>
                                     Stack
@@ -935,13 +1053,11 @@ export default function ProjectPage() {
                                 Un projet en tête ?
                             </span>
 
-
                             <h2>
                                 Créons quelque
                                 chose qui vous
                                 ressemble.
                             </h2>
-
 
                             <p>
                                 Une idée, un site
@@ -950,9 +1066,8 @@ export default function ProjectPage() {
                                 simplement.
                             </p>
 
-
                             <a
-                                href="mailto:r.digit.contact@gmail.com"
+                                href={`mailto:${SITE.email}`}
                                 className="project-detail__cta-link"
                             >
                                 Parlons de votre
