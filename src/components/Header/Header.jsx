@@ -11,10 +11,11 @@ import {
     X,
 } from 'lucide-react';
 
-import logoRDigit from '../../assets/images/logo-rdigit.png';
+import logoRDigit from '../../assets/images/logo-rdigit.webp';
+
+import { SITE } from '../../config/site';
 
 import './Header.css';
-
 
 const navigation = [
     {
@@ -38,7 +39,6 @@ const navigation = [
         href: '/#contact',
     },
 ];
-
 
 /* =========================================
    THEME
@@ -68,14 +68,12 @@ const getInitialTheme = () => {
     return 'light';
 };
 
-
 export default function Header() {
     const [isOpen, setIsOpen] =
         useState(false);
 
     const [theme, setTheme] =
         useState(getInitialTheme);
-
 
     /* =========================================
        APPLY THEME
@@ -96,7 +94,6 @@ export default function Header() {
             theme,
         );
     }, [theme]);
-
 
     /* =========================================
        MOBILE MENU
@@ -127,11 +124,9 @@ export default function Header() {
         };
     }, [isOpen]);
 
-
     const closeMenu = () => {
         setIsOpen(false);
     };
-
 
     /* =========================================
        THEME TOGGLE
@@ -144,7 +139,6 @@ export default function Header() {
                 : 'light',
         );
     };
-
 
     /* =========================================
        SCROLL
@@ -204,7 +198,6 @@ export default function Header() {
         });
     };
 
-
     return (
         <header className="header">
             <div className="container header__container">
@@ -227,6 +220,7 @@ export default function Header() {
                             src={logoRDigit}
                             alt=""
                             className="header__logo-image"
+                            decoding="async"
                         />
                     </span>
 
@@ -234,7 +228,6 @@ export default function Header() {
                         R.DIGIT
                     </span>
                 </a>
-
 
                 {/* NAVIGATION DESKTOP */}
 
@@ -270,7 +263,6 @@ export default function Header() {
                     )}
                 </nav>
 
-
                 {/* ACTIONS */}
 
                 <div className="header__actions">
@@ -303,6 +295,7 @@ export default function Header() {
                                 className={[
                                     'header__theme-icon',
                                     'header__theme-icon--sun',
+
                                     theme === 'light'
                                         ? 'header__theme-icon--active'
                                         : '',
@@ -317,6 +310,7 @@ export default function Header() {
                                 className={[
                                     'header__theme-icon',
                                     'header__theme-icon--moon',
+
                                     theme === 'dark'
                                         ? 'header__theme-icon--active'
                                         : '',
@@ -328,11 +322,10 @@ export default function Header() {
                         </span>
                     </button>
 
-
                     {/* CTA DESKTOP */}
 
                     <a
-                        href="mailto:r.digit.contact@gmail.com"
+                        href={`mailto:${SITE.email}`}
                         className="header__contact"
                     >
                         Discutons
@@ -342,7 +335,6 @@ export default function Header() {
                             strokeWidth={2}
                         />
                     </a>
-
 
                     {/* MENU MOBILE */}
 
@@ -378,7 +370,6 @@ export default function Header() {
 
                 </div>
             </div>
-
 
             {/* MENU MOBILE */}
 
@@ -466,7 +457,6 @@ export default function Header() {
                         </nav>
                     </div>
 
-
                     {/* BAS DU MENU */}
 
                     <div className="header__mobile-bottom">
@@ -487,13 +477,12 @@ export default function Header() {
                             </p>
                         </div>
 
-
                         <a
-                            href="mailto:r.digit.contact@gmail.com"
+                            href={`mailto:${SITE.email}`}
                             className="header__mobile-contact"
                         >
                             <span>
-                                r.digit.contact@gmail.com
+                                {SITE.email}
                             </span>
 
                             <span className="header__mobile-contact-icon">
@@ -503,7 +492,6 @@ export default function Header() {
                                 />
                             </span>
                         </a>
-
 
                         <div className="header__mobile-footer">
                             <span>

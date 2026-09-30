@@ -1,16 +1,16 @@
-import xenomMain from '../assets/images/projects/xenom.png';
-import xenomPerformance from '../assets/images/projects/xenom-performance.png';
-import xenomDesign from '../assets/images/projects/xenom-design.png';
-import xenomExperience from '../assets/images/projects/xenom-experience.png';
-import xenomMachine from '../assets/images/projects/xenom-machine.png';
+import xenomMain from '../assets/images/projects/xenom.webp';
+import xenomPerformance from '../assets/images/projects/xenom-performance.webp';
+import xenomDesign from '../assets/images/projects/xenom-design.webp';
+import xenomExperience from '../assets/images/projects/xenom-experience.webp';
+import xenomMachine from '../assets/images/projects/xenom-machine.webp';
 
-import halalMain from '../assets/images/projects/halal-food-caen.png';
-import halalRestaurants from '../assets/images/projects/halal-restaurants.png';
-import halalCard from '../assets/images/projects/halal-card.png';
+import halalMain from '../assets/images/projects/halal-food-caen.webp';
+import halalRestaurants from '../assets/images/projects/halal-restaurants.webp';
+import halalCard from '../assets/images/projects/halal-card.webp';
 
-import cristouneMain from '../assets/images/projects/cristoune-creation.png';
-import cristouneProduct from '../assets/images/projects/cristoune-product.png';
-import cristouneAdmin from '../assets/images/projects/cristoune-admin.png';
+import cristouneMain from '../assets/images/projects/cristoune-creation.webp';
+import cristouneProduct from '../assets/images/projects/cristoune-product.webp';
+import cristouneAdmin from '../assets/images/projects/cristoune-admin.webp';
 
 export const projects = [
     {

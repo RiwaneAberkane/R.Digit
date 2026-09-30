@@ -1,4 +1,7 @@
-import { useLayoutEffect, useRef } from 'react';
+import {
+    useLayoutEffect,
+    useRef,
+} from 'react';
 
 import {
     ArrowDown,
@@ -22,8 +25,12 @@ export default function Hero() {
 
             mm.add(
                 {
-                    desktop: '(min-width: 769px)',
-                    mobile: '(max-width: 768px)',
+                    desktop:
+                        '(min-width: 769px)',
+
+                    mobile:
+                        '(max-width: 768px)',
+
                     reduceMotion:
                         '(prefers-reduced-motion: reduce)',
                 },
@@ -34,105 +41,129 @@ export default function Hero() {
                         reduceMotion,
                     } = context.conditions;
 
+                    const criticalContent = [
+                        '.hero__eyebrow',
+                        '.hero__title-line',
+                        '.hero__description',
+                        '.hero__actions',
+                        '.hero__meta',
+                    ];
+
+                    /*
+                     * Accessibilité :
+                     * aucune animation si l'utilisateur
+                     * préfère réduire les mouvements.
+                     */
                     if (reduceMotion) {
                         gsap.set(
                             [
-                                '.hero__eyebrow',
-                                '.hero__title-line',
-                                '.hero__description',
-                                '.hero__actions',
-                                '.hero__meta',
+                                ...criticalContent,
                                 '.hero__visual',
                                 '.hero__floating-card',
                             ],
                             {
-                                clearProps: 'all',
                                 opacity: 1,
-                                transform: 'none',
+                                clearProps: 'all',
                             },
                         );
 
                         return;
                     }
 
-                    const timeline = gsap.timeline({
-                        defaults: {
-                            ease: 'power3.out',
-                        },
-                    });
-
-                    timeline
-                        .from('.hero__eyebrow', {
-                            y: 18,
-                            opacity: 0,
-                            duration: 0.65,
-                        })
-
-                        .from(
-                            '.hero__title-line',
-                            {
-                                yPercent: 110,
-                                opacity: 0,
-                                duration: 0.95,
-                                stagger: 0.1,
-                            },
-                            '-=0.3',
-                        )
-
-                        .from(
-                            '.hero__description',
-                            {
-                                y: 24,
-                                opacity: 0,
-                                duration: 0.7,
-                            },
-                            '-=0.45',
-                        )
-
-                        .from(
-                            '.hero__actions',
-                            {
-                                y: 20,
-                                opacity: 0,
-                                duration: 0.65,
-                            },
-                            '-=0.45',
-                        )
-
-                        .from(
-                            '.hero__meta',
-                            {
-                                y: 15,
-                                opacity: 0,
-                                duration: 0.55,
-                            },
-                            '-=0.4',
-                        )
-
-                        .from(
-                            '.hero__visual',
-                            {
-                                x: desktop ? 80 : 0,
-                                y: mobile ? 35 : 0,
-                                scale: 0.94,
-                                opacity: 0,
-                                duration: 1.15,
-                            },
-                            '-=0.95',
-                        )
-
-                        .from(
-                            '.hero__floating-card',
-                            {
-                                scale: 0.8,
-                                opacity: 0,
-                                duration: 0.6,
-                                stagger: 0.12,
-                            },
-                            '-=0.6',
-                        );
-
+                    /*
+                     * =========================================
+                     * DESKTOP
+                     * =========================================
+                     *
+                     * On conserve l'animation complète
+                     * du Hero.
+                     */
                     if (desktop) {
+                        const timeline =
+                            gsap.timeline({
+                                defaults: {
+                                    ease:
+                                        'power3.out',
+                                },
+                            });
+
+                        timeline
+                            .from(
+                                '.hero__eyebrow',
+                                {
+                                    y: 18,
+                                    opacity: 0,
+                                    duration: 0.65,
+                                },
+                            )
+
+                            .from(
+                                '.hero__title-line',
+                                {
+                                    yPercent: 110,
+                                    opacity: 0,
+                                    duration: 0.95,
+                                    stagger: 0.1,
+                                },
+                                '-=0.3',
+                            )
+
+                            .from(
+                                '.hero__description',
+                                {
+                                    y: 24,
+                                    opacity: 0,
+                                    duration: 0.7,
+                                },
+                                '-=0.45',
+                            )
+
+                            .from(
+                                '.hero__actions',
+                                {
+                                    y: 20,
+                                    opacity: 0,
+                                    duration: 0.65,
+                                },
+                                '-=0.45',
+                            )
+
+                            .from(
+                                '.hero__meta',
+                                {
+                                    y: 15,
+                                    opacity: 0,
+                                    duration: 0.55,
+                                },
+                                '-=0.4',
+                            )
+
+                            .from(
+                                '.hero__visual',
+                                {
+                                    x: 80,
+                                    scale: 0.94,
+                                    opacity: 0,
+                                    duration: 1.15,
+                                },
+                                '-=0.95',
+                            )
+
+                            .from(
+                                '.hero__floating-card',
+                                {
+                                    scale: 0.8,
+                                    opacity: 0,
+                                    duration: 0.6,
+                                    stagger: 0.12,
+                                },
+                                '-=0.6',
+                            );
+
+                        /*
+                         * Animations liées au scroll.
+                         * Desktop uniquement.
+                         */
                         gsap.to(
                             '.hero__visual-inner',
                             {
@@ -217,6 +248,58 @@ export default function Hero() {
                                 },
                             },
                         );
+                    }
+
+                    /*
+                     * =========================================
+                     * MOBILE
+                     * =========================================
+                     *
+                     * Le contenu critique est immédiatement
+                     * visible pour ne pas retarder le LCP.
+                     *
+                     * On anime uniquement la partie visuelle.
+                     */
+                    if (mobile) {
+                        gsap.set(
+                            criticalContent,
+                            {
+                                opacity: 1,
+                                clearProps:
+                                    'transform',
+                            },
+                        );
+
+                        const mobileTimeline =
+                            gsap.timeline({
+                                defaults: {
+                                    ease:
+                                        'power3.out',
+                                },
+                            });
+
+                        mobileTimeline
+                            .from(
+                                '.hero__visual',
+                                {
+                                    y: 30,
+                                    scale: 0.97,
+                                    opacity: 0,
+                                    duration: 0.75,
+                                },
+                            )
+
+                            .from(
+                                '.hero__floating-card',
+                                {
+                                    y: 10,
+                                    scale: 0.92,
+                                    opacity: 0,
+                                    duration: 0.45,
+                                    stagger: 0.08,
+                                },
+                                '-=0.35',
+                            );
                     }
                 },
             );
