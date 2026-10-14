@@ -1,3 +1,4 @@
+
 import {
     useLayoutEffect,
     useRef,
@@ -16,43 +17,44 @@ import { gsap } from '../../utils/gsap';
 
 import './About.css';
 
+/* ---------------------------------- */
+/* Valeurs R.Digit                     */
+/* ---------------------------------- */
+
 const values = [
     {
         icon: MessagesSquare,
         number: '01',
         title: 'Écoute',
-
         text:
-            'Comprendre le besoin avant de commencer à construire.',
+            'Comprendre vos besoins, vos objectifs et votre activité avant de commencer.',
     },
-
     {
         icon: PenTool,
         number: '02',
         title: 'Sur mesure',
-
         text:
-            'Créer une solution adaptée au projet plutôt qu’un site générique.',
+            'Concevoir un site internet unique, adapté à votre identité et à vos ambitions.',
     },
-
     {
         icon: Zap,
         number: '03',
         title: 'Réactivité',
-
         text:
-            'Rester disponible, avancer clairement et communiquer rapidement.',
+            'Communiquer clairement et faire avancer votre projet avec efficacité.',
     },
-
     {
         icon: HeartHandshake,
         number: '04',
         title: 'Implication',
-
         text:
-            'Porter le projet avec le client jusqu’à obtenir un résultat satisfaisant.',
+            'Vous accompagner de la conception jusqu’à la mise en ligne de votre site.',
     },
 ];
+
+/* ---------------------------------- */
+/* Composant About                     */
+/* ---------------------------------- */
 
 export default function About() {
     const sectionRef = useRef(null);
@@ -63,13 +65,10 @@ export default function About() {
 
             mm.add(
                 {
-                    desktop:
-                        '(min-width: 901px)',
-
+                    desktop: '(min-width: 901px)',
                     reduceMotion:
                         '(prefers-reduced-motion: reduce)',
                 },
-
                 (context) => {
                     const {
                         desktop,
@@ -94,120 +93,75 @@ export default function About() {
                         return;
                     }
 
-                    gsap.from(
-                        '.about__heading',
-                        {
-                            y: 50,
-                            opacity: 0,
-                            duration: 0.9,
-                            ease: 'power3.out',
+                    /* Animation du titre */
 
-                            scrollTrigger: {
-                                trigger:
-                                    '.about__heading',
-
-                                start:
-                                    'top 82%',
-                            },
+                    gsap.from('.about__heading', {
+                        y: 50,
+                        opacity: 0,
+                        duration: 0.9,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: '.about__heading',
+                            start: 'top 82%',
                         },
-                    );
+                    });
 
-                    gsap.from(
-                        '.about__copy',
-                        {
-                            y: 40,
-                            opacity: 0,
-                            duration: 0.85,
-                            ease: 'power3.out',
+                    /* Animation du texte */
 
-                            scrollTrigger: {
-                                trigger:
-                                    '.about__copy',
-
-                                start:
-                                    'top 84%',
-                            },
+                    gsap.from('.about__copy', {
+                        y: 40,
+                        opacity: 0,
+                        duration: 0.85,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: '.about__copy',
+                            start: 'top 84%',
                         },
-                    );
+                    });
 
-                    gsap.from(
-                        '.about__visual',
-                        {
-                            x:
-                                desktop
-                                    ? 70
-                                    : 0,
+                    /* Animation de la carte */
 
-                            y:
-                                desktop
-                                    ? 0
-                                    : 45,
-
-                            rotateY:
-                                desktop
-                                    ? -7
-                                    : 0,
-
-                            scale: 0.95,
-                            opacity: 0,
-
-                            duration: 1,
-
-                            ease: 'power3.out',
-
-                            scrollTrigger: {
-                                trigger:
-                                    '.about__visual',
-
-                                start:
-                                    'top 82%',
-                            },
+                    gsap.from('.about__visual', {
+                        x: desktop ? 70 : 0,
+                        y: desktop ? 0 : 45,
+                        rotateY: desktop ? -7 : 0,
+                        scale: 0.95,
+                        opacity: 0,
+                        duration: 1,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: '.about__visual',
+                            start: 'top 82%',
                         },
-                    );
+                    });
 
-                    gsap.from(
-                        '.about__value',
-                        {
-                            y: 35,
-                            opacity: 0,
+                    /* Animation des valeurs */
 
-                            duration: 0.75,
-
-                            stagger: 0.12,
-
-                            ease: 'power3.out',
-
-                            scrollTrigger: {
-                                trigger:
-                                    '.about__values',
-
-                                start:
-                                    'top 84%',
-                            },
+                    gsap.from('.about__value', {
+                        y: 35,
+                        opacity: 0,
+                        duration: 0.75,
+                        stagger: 0.12,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: '.about__values',
+                            start: 'top 84%',
                         },
-                    );
+                    });
+
+                    /* Parallaxe desktop */
 
                     if (desktop) {
-                        gsap.to(
-                            '.about__visual-card',
-                            {
-                                y: 45,
-                                rotateY: -3,
-
-                                scrollTrigger: {
-                                    trigger:
-                                        sectionRef.current,
-
-                                    start:
-                                        'top bottom',
-
-                                    end:
-                                        'bottom top',
-
-                                    scrub: 1.4,
-                                },
+                        gsap.to('.about__visual-card', {
+                            y: 45,
+                            rotateY: -3,
+                            scrollTrigger: {
+                                trigger: sectionRef.current,
+                                start: 'top bottom',
+                                end: 'bottom top',
+                                scrub: 1.4,
                             },
-                        );
+                        });
                     }
                 },
             );
@@ -223,51 +177,70 @@ export default function About() {
             ref={sectionRef}
             id="about"
             className="about"
+            aria-labelledby="about-title"
         >
+            {/* Effets visuels */}
+
             <div className="about__glow about__glow--one" />
             <div className="about__glow about__glow--two" />
 
             <div className="container">
+
+                {/* En-tête */}
+
                 <div className="about__heading">
                     <span className="section-label">
-                        À propos
+                        À propos de R.Digit
                     </span>
 
-                    <h2>
+                    <h2 id="about-title">
                         Je ne développe pas
                         <br />
-
                         <span>
                             juste des sites.
                         </span>
                     </h2>
                 </div>
 
+                {/* Présentation */}
+
                 <div className="about__main">
+
                     <div className="about__copy">
+
                         <p className="about__lead">
-                            Je conçois des expériences
-                            digitales avec une idée simple :
-                            un projet doit être aussi agréable
-                            à utiliser qu’à regarder.
+                            Chez R.Digit, je conçois des
+                            sites internet modernes et
+                            sur mesure, avec une idée
+                            simple : chaque site doit
+                            être aussi agréable à utiliser
+                            qu'à regarder.
                         </p>
 
                         <p>
-                            Mon approche mélange
-                            développement, design et réflexion
-                            produit. Je cherche à comprendre
-                            ce que le projet doit réellement
-                            apporter avant de décider comment
-                            le construire.
+                            Développeur web freelance et
+                            webdesigner, j'accompagne les
+                            entrepreneurs, artisans,
+                            indépendants et entreprises
+                            partout en France dans la
+                            création de sites vitrines,
+                            de boutiques e-commerce
+                            et la refonte de sites internet.
+                            Chaque projet associe design,
+                            performance et expérience
+                            utilisateur.
                         </p>
 
                         <p>
-                            Et surtout, je veux que la
-                            collaboration reste simple.
-                            Répondre rapidement, expliquer
-                            clairement les choix et avancer
-                            avec le client fait autant partie
-                            du projet que le code lui-même.
+                            Mon approche repose sur
+                            l'écoute, la réactivité et
+                            un accompagnement personnalisé.
+                            De la conception à la mise
+                            en ligne, je développe des
+                            solutions adaptées à vos
+                            objectifs pour valoriser
+                            votre activité et renforcer
+                            votre présence en ligne.
                         </p>
 
                         <a
@@ -280,17 +253,25 @@ export default function About() {
                                 <ArrowUpRight
                                     size={18}
                                     strokeWidth={2}
+                                    aria-hidden="true"
                                 />
                             </span>
                         </a>
+
                     </div>
 
+                    {/* Carte visuelle */}
+
                     <div className="about__visual">
+
                         <div className="about__visual-aura" />
 
                         <div className="about__visual-card">
+
                             <div className="about__visual-top">
+
                                 <div className="about__visual-brand">
+
                                     <span className="about__visual-logo">
                                         R
                                     </span>
@@ -304,14 +285,17 @@ export default function About() {
                                             Création numérique
                                         </span>
                                     </div>
+
                                 </div>
 
                                 <span className="about__visual-index">
                                     05 / 08
                                 </span>
+
                             </div>
 
                             <div className="about__visual-center">
+
                                 <span className="about__visual-small">
                                     MA FAÇON DE TRAVAILLER
                                 </span>
@@ -319,50 +303,44 @@ export default function About() {
                                 <h3>
                                     CODE.
                                     <br />
-
                                     <span>
                                         DESIGN.
                                     </span>
-
                                     <br />
-
                                     SOLUTIONS.
                                 </h3>
+
                             </div>
 
-                            <div className="about__visual-process">
-                                <div>
-                                    <span>
-                                        01
-                                    </span>
+                            {/* Processus */}
 
+                            <div className="about__visual-process">
+
+                                <div>
+                                    <span>01</span>
                                     <strong>
                                         Écouter
                                     </strong>
                                 </div>
 
                                 <div>
-                                    <span>
-                                        02
-                                    </span>
-
+                                    <span>02</span>
                                     <strong>
                                         Comprendre
                                     </strong>
                                 </div>
 
                                 <div>
-                                    <span>
-                                        03
-                                    </span>
-
+                                    <span>03</span>
                                     <strong>
                                         Construire
                                     </strong>
                                 </div>
+
                             </div>
 
                             <div className="about__visual-footer">
+
                                 <span>
                                     R.DIGIT
                                 </span>
@@ -372,8 +350,12 @@ export default function About() {
                                 <span>
                                     2026
                                 </span>
+
                             </div>
+
                         </div>
+
+                        {/* Labels flottants */}
 
                         <span className="about__floating-label about__floating-label--one">
                             FRONTEND
@@ -386,10 +368,15 @@ export default function About() {
                         <span className="about__floating-label about__floating-label--three">
                             PERFORMANCE
                         </span>
+
                     </div>
+
                 </div>
 
+                {/* Valeurs */}
+
                 <div className="about__values">
+
                     <div className="about__values-grid" />
 
                     <div className="about__values-line">
@@ -410,18 +397,24 @@ export default function About() {
                                 key={number}
                                 className={[
                                     'about__value',
-
                                     `about__value--${index + 1}`,
                                 ].join(' ')}
                             >
+
                                 <div className="about__value-node">
+
                                     <span className="about__value-node-wave about__value-node-wave--one" />
+
                                     <span className="about__value-node-wave about__value-node-wave--two" />
+
                                     <span className="about__value-node-core" />
+
                                 </div>
 
                                 <div className="about__value-card">
+
                                     <div className="about__value-top">
+
                                         <span className="about__value-number">
                                             {number}
                                         </span>
@@ -430,14 +423,16 @@ export default function About() {
                                             <Icon
                                                 size={19}
                                                 strokeWidth={1.8}
+                                                aria-hidden="true"
                                             />
                                         </span>
+
                                     </div>
 
                                     <div className="about__value-content">
+
                                         <span className="about__value-status">
                                             <span />
-
                                             Étape {number}
                                         </span>
 
@@ -448,12 +443,17 @@ export default function About() {
                                         <p>
                                             {text}
                                         </p>
+
                                     </div>
+
                                 </div>
+
                             </article>
                         ),
                     )}
+
                 </div>
+
             </div>
         </section>
     );
