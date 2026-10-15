@@ -12,6 +12,11 @@ import cristouneMain from '../assets/images/projects/cristoune-creation.webp';
 import cristouneProduct from '../assets/images/projects/cristoune-product.webp';
 import cristouneAdmin from '../assets/images/projects/cristoune-admin.webp';
 
+import kyraMain from '../assets/images/projects/kyra-renov.webp';
+import kyraAbout from '../assets/images/projects/kyra-renov-about.webp';
+import kyraRealisations from '../assets/images/projects/kyra-renov-realisations.webp';
+import kyraServices from '../assets/images/projects/kyra-renov-services.webp';
+
 export const projects = [
     {
         number: '01',
@@ -174,6 +179,93 @@ export const projects = [
 
     {
         number: '03',
+        slug: 'kyra-renov',
+
+        name: 'Kyra Renov',
+
+        category: 'Site vitrine — Rénovation',
+
+        shortDescription:
+            'Un site vitrine moderne conçu pour présenter les services et réalisations d’une entreprise de rénovation en Île-de-France.',
+
+        description:
+            'Kyra Renov est un site vitrine conçu pour présenter une entreprise spécialisée dans la rénovation intérieure et extérieure. L’objectif était de créer une présence digitale professionnelle, claire et rassurante, tout en mettant en valeur les prestations et les réalisations.',
+
+        context:
+            'Le projet devait permettre à l’entreprise de présenter son savoir-faire de manière simple et professionnelle. L’expérience a été pensée pour faciliter la découverte des services, renforcer la crédibilité de l’entreprise et encourager la prise de contact.',
+
+        role:
+            'Conception de l’interface, direction visuelle, développement frontend, responsive design et mise en valeur des prestations et réalisations.',
+
+        mainImage: kyraMain,
+
+        imageAlt:
+            'Page d’accueil du site Kyra Renov — rénovation intérieure et extérieure',
+
+        theme: 'kyra',
+
+        liveUrl:
+            'https://www.kyrarenov.fr/',
+
+        stack: [
+            'React',
+            'Vite',
+            'CSS',
+            'JavaScript',
+            'Responsive Design',
+        ],
+
+        features: [
+            {
+                number: '01',
+                title: 'Présentation des services',
+                text:
+                    'Les différentes prestations de rénovation sont présentées de manière claire afin de permettre aux visiteurs de comprendre rapidement l’offre.',
+            },
+            {
+                number: '02',
+                title: 'Réalisations',
+                text:
+                    'Les projets réalisés sont mis en avant à travers une présentation visuelle permettant de montrer concrètement le savoir-faire de l’entreprise.',
+            },
+            {
+                number: '03',
+                title: 'Avant / Après',
+                text:
+                    'Une présentation interactive permet de visualiser les transformations réalisées et de mettre en évidence le résultat des travaux.',
+            },
+        ],
+
+        gallery: [
+            {
+                image: kyraAbout,
+                alt:
+                    'Section À propos du site Kyra Renov',
+                label: 'À propos',
+                title:
+                    'Présenter une entreprise et son savoir-faire.',
+            },
+            {
+                image: kyraRealisations,
+                alt:
+                    'Section Avant Après du site Kyra Renov',
+                label: 'Avant / Après',
+                title:
+                    'Montrer concrètement la transformation des espaces.',
+            },
+            {
+                image: kyraServices,
+                alt:
+                    'Section Services du site Kyra Renov',
+                label: 'Services',
+                title:
+                    'Présenter clairement chaque prestation.',
+            },
+        ],
+    },
+
+    {
+        number: '04',
         slug: 'xenom',
 
         name: 'XENOM',

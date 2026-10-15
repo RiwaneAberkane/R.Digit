@@ -1,3 +1,7 @@
+/* ==================================================
+   PROJECT DETAIL
+================================================== */
+
 .project-detail {
     --project-accent: var(--color-blue);
     --project-background: #f7faff;
@@ -6,17 +10,22 @@
     --project-soft: var(--color-text-soft);
 
     position: relative;
+    min-height: 100vh;
 
     color: var(--project-text);
     background: var(--project-background);
 
     overflow: hidden;
+
+    transition:
+        background-color 0.35s ease,
+        color 0.35s ease;
 }
 
 
-/* =========================
+/* ==================================================
    THEMES
-========================= */
+================================================== */
 
 .project-detail--xenom {
     --project-accent: #d31c25;
@@ -45,9 +54,21 @@
 }
 
 
-/* =========================
+.project-detail--kyra {
+    --project-accent: #17609a;
+    --project-accent-dark: #0f3f68;
+
+    --project-background: #f1f7fc;
+    --project-surface: #ffffff;
+
+    --project-text: #10233b;
+    --project-soft: #65778d;
+}
+
+
+/* ==================================================
    HERO
-========================= */
+================================================== */
 
 .project-detail__hero {
     position: relative;
@@ -66,13 +87,15 @@
 
     inset: 0;
 
+    z-index: 0;
+
     pointer-events: none;
 }
 
 
-/* =========================
-   XENOM HERO
-========================= */
+/* ==================================================
+   HERO BACKGROUNDS
+================================================== */
 
 .project-detail--xenom .project-detail__hero-background {
     background:
@@ -85,14 +108,10 @@
 }
 
 
-/* =========================
-   HALAL HERO
-========================= */
-
 .project-detail--halal .project-detail__hero-background {
     background:
         radial-gradient(circle at 75% 25%,
-            rgba(212, 156, 23, 0.13),
+            rgba(212, 156, 23, 0.15),
             transparent 32%),
         linear-gradient(180deg,
             #fffaf1,
@@ -100,14 +119,10 @@
 }
 
 
-/* =========================
-   CRISTOUNE HERO
-========================= */
-
 .project-detail--cristoune .project-detail__hero-background {
     background:
         radial-gradient(circle at 75% 25%,
-            rgba(148, 100, 168, 0.13),
+            rgba(148, 100, 168, 0.14),
             transparent 32%),
         linear-gradient(180deg,
             #fbf7f2,
@@ -115,16 +130,30 @@
 }
 
 
+.project-detail--kyra .project-detail__hero-background {
+    background:
+        radial-gradient(circle at 78% 20%,
+            rgba(23, 96, 154, 0.17),
+            transparent 34%),
+        radial-gradient(circle at 15% 75%,
+            rgba(23, 96, 154, 0.07),
+            transparent 30%),
+        linear-gradient(180deg,
+            #f4f9fd 0%,
+            #edf5fb 50%,
+            #f8fbfe 100%);
+}
+
+
 .project-detail__hero .container {
     position: relative;
-
     z-index: 2;
 }
 
 
-/* =========================
+/* ==================================================
    HERO TOP
-========================= */
+================================================== */
 
 .project-detail__hero-top {
     display: flex;
@@ -172,9 +201,9 @@
 }
 
 
-/* =========================
+/* ==================================================
    HERO COPY
-========================= */
+================================================== */
 
 .project-detail__hero-copy {
     max-width: 1050px;
@@ -231,12 +260,13 @@
 }
 
 
-/* =========================
+/* ==================================================
    HERO ACTIONS
-========================= */
+================================================== */
 
 .project-detail__hero-actions {
     display: flex;
+
     flex-wrap: wrap;
 
     gap: 12px;
@@ -267,7 +297,9 @@
     transition:
         transform var(--transition-normal),
         background var(--transition-normal),
-        color var(--transition-normal);
+        color var(--transition-normal),
+        border-color var(--transition-normal),
+        box-shadow var(--transition-normal);
 }
 
 
@@ -276,12 +308,16 @@
 
     background:
         var(--project-accent);
+
+    box-shadow:
+        0 10px 25px color-mix(in srgb,
+            var(--project-accent) 18%,
+            transparent);
 }
 
 
 .project-detail__secondary-button {
-    color:
-        var(--project-text);
+    color: var(--project-text);
 
     border:
         1px solid color-mix(in srgb,
@@ -290,16 +326,31 @@
 }
 
 
-.project-detail__primary-button:hover,
-.project-detail__secondary-button:hover {
+.project-detail__primary-button:hover {
     transform:
         translateY(-2px);
+
+    box-shadow:
+        0 14px 30px color-mix(in srgb,
+            var(--project-accent) 25%,
+            transparent);
 }
 
 
-/* =========================
-   HERO BROWSER
-========================= */
+.project-detail__secondary-button:hover {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        color-mix(in srgb,
+            var(--project-accent) 35%,
+            transparent);
+}
+
+
+/* ==================================================
+   BROWSER
+================================================== */
 
 .project-detail__hero-visual {
     position: relative;
@@ -330,8 +381,27 @@
 
     transform:
         rotateX(1deg);
+
+    transition:
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
 }
 
+
+.project-detail--kyra .project-detail__browser {
+    border-color:
+        rgba(23, 96, 154, 0.14);
+
+    box-shadow:
+        0 50px 130px rgba(15, 63, 104, 0.12),
+
+        0 10px 35px rgba(15, 63, 104, 0.07);
+}
+
+
+/* ==================================================
+   BROWSER TOP
+================================================== */
 
 .project-detail__browser-top {
     display: grid;
@@ -348,8 +418,7 @@
     padding:
         0 18px;
 
-    color:
-        var(--project-soft);
+    color: var(--project-soft);
 
     font-size: 0.58rem;
     font-weight: 700;
@@ -400,20 +469,25 @@
 }
 
 
-/* =========================
-   HERO SCREENSHOT
-   AUCUN ROGNAGE
-========================= */
+/* ==================================================
+   SCREENSHOT
+   IMPORTANT : aucune bordure ajoutée
+================================================== */
 
 .project-detail__browser-screen {
     position: relative;
 
     width: 100%;
 
+    padding: 0;
+    margin: 0;
+
     background:
         var(--project-surface);
 
     overflow: hidden;
+
+    line-height: 0;
 }
 
 
@@ -425,32 +499,66 @@
 
     max-width: none;
 
+    padding: 0;
+    margin: 0;
+
+    border: 0 !important;
+    outline: 0 !important;
+
     object-fit: initial;
 
-    transform:
-        none !important;
+    transform: none !important;
 }
 
 
-/* =========================
-   CRISTOUNE SCREENSHOT FIX
-   SUPPRESSION MARGES LATÉRALES
-========================= */
+/* ==================================================
+   KYRA — FIX BORDURES BLANCHES
+================================================== */
 
-.project-detail--cristoune .project-detail__hero-image {
-    width: calc(100% + 20px);
-    height: auto;
+/*
+   On fait légèrement dépasser l'image afin de cacher
+   les éventuels pixels blancs présents au bord du PNG.
+*/
+
+.project-detail--kyra .project-detail__browser-screen {
+    padding: 0;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    background:
+        #edf5fb;
+}
+
+
+.project-detail--kyra .project-detail__hero-image {
+    display: block;
+
+    width:
+        calc(100% + 4px);
 
     max-width: none;
 
-    margin-left: -10px;
+    height: auto;
+
+    margin:
+        -2px 0 -2px -2px;
+
+    padding: 0;
+
+    border: 0 !important;
+    outline: 0 !important;
 
     object-fit: initial;
 
-    transform:
-        none !important;
+    transform: none !important;
 }
 
+
+/* ==================================================
+   THEME SCREEN BACKGROUNDS
+================================================== */
 
 .project-detail--xenom .project-detail__browser-screen {
     background:
@@ -470,9 +578,15 @@
 }
 
 
-/* =========================
-   COMMON SECTIONS
-========================= */
+.project-detail--kyra .project-detail__browser-screen {
+    background:
+        #edf5fb;
+}
+
+
+/* ==================================================
+   SECTIONS
+================================================== */
 
 .project-detail__overview,
 .project-detail__features,
@@ -482,6 +596,10 @@
         150px 0;
 }
 
+
+/* ==================================================
+   SECTION LABELS
+================================================== */
 
 .project-detail__section-number,
 .project-detail__section-label {
@@ -515,9 +633,9 @@
 }
 
 
-/* =========================
+/* ==================================================
    OVERVIEW
-========================= */
+================================================== */
 
 .project-detail__overview-grid {
     display: grid;
@@ -570,9 +688,9 @@
 }
 
 
-/* =========================
+/* ==================================================
    ROLE
-========================= */
+================================================== */
 
 .project-detail__role {
     display: grid;
@@ -616,9 +734,9 @@
 }
 
 
-/* =========================
+/* ==================================================
    FEATURES
-========================= */
+================================================== */
 
 .project-detail__features {
     background:
@@ -671,6 +789,24 @@
             transparent);
 
     border-radius: 20px;
+
+    transition:
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        transform 0.35s ease;
+}
+
+
+.project-detail__feature:hover {
+    border-color:
+        color-mix(in srgb,
+            var(--project-accent) 22%,
+            transparent);
+
+    box-shadow:
+        0 20px 50px color-mix(in srgb,
+            var(--project-accent) 7%,
+            transparent);
 }
 
 
@@ -709,9 +845,9 @@
 }
 
 
-/* =========================
+/* ==================================================
    GALLERY
-========================= */
+================================================== */
 
 .project-detail__gallery-list {
     display: flex;
@@ -725,19 +861,22 @@
 .project-detail__gallery-item {
     width: 90%;
 
-    margin: 0;
-    margin-right: auto;
+    margin:
+        0 auto 0 0;
 }
 
 
 .project-detail__gallery-item--offset {
-    margin-right: 0;
-    margin-left: auto;
+    margin:
+        0 0 0 auto;
 }
 
 
 .project-detail__gallery-image {
     width: 100%;
+
+    padding: 0;
+    margin: 0;
 
     background:
         var(--project-surface);
@@ -748,6 +887,8 @@
 
     box-shadow:
         0 35px 90px rgba(0, 0, 0, 0.13);
+
+    line-height: 0;
 }
 
 
@@ -757,9 +898,19 @@
     width: 100%;
     height: auto;
 
+    padding: 0;
+    margin: 0;
+
+    border: 0 !important;
+    outline: 0 !important;
+
     object-fit: initial;
 }
 
+
+/* ==================================================
+   GALLERY THEME
+================================================== */
 
 .project-detail--xenom .project-detail__gallery-image {
     background:
@@ -778,6 +929,19 @@
         #fbf7f2;
 }
 
+
+.project-detail--kyra .project-detail__gallery-image {
+    background:
+        #edf5fb;
+
+    box-shadow:
+        0 35px 90px rgba(15, 63, 104, 0.10);
+}
+
+
+/* ==================================================
+   GALLERY CAPTION
+================================================== */
 
 .project-detail__gallery-item figcaption {
     display: flex;
@@ -815,11 +979,11 @@
             3vw,
             2.7rem);
 
-    text-align: right;
-
     line-height: 1.05;
 
     letter-spacing: -0.04em;
+
+    text-align: right;
 }
 
 
@@ -838,10 +1002,6 @@
     overflow: hidden;
 }
 
-
-/* =========================
-   STACK BACKGROUND GLOW
-========================= */
 
 .project-detail__stack::before {
     content: '';
@@ -875,10 +1035,6 @@
 }
 
 
-/* =========================
-   STACK WRAPPER
-========================= */
-
 .project-detail__stack-wrapper {
     display: grid;
 
@@ -890,10 +1046,6 @@
     align-items: center;
 }
 
-
-/* =========================
-   STACK GRID
-========================= */
 
 .project-detail__stack-list {
     display: grid;
@@ -908,9 +1060,9 @@
 }
 
 
-/* =========================
+/* ==================================================
    TECHNOLOGY CARD
-========================= */
+================================================== */
 
 .project-detail__stack-item {
     position: relative;
@@ -958,10 +1110,6 @@
 }
 
 
-/* =========================
-   TECHNOLOGY GLOW
-========================= */
-
 .project-detail__stack-item::before {
     content: '';
 
@@ -996,10 +1144,6 @@
 }
 
 
-/* =========================
-   TOP LIGHT
-========================= */
-
 .project-detail__stack-item::after {
     content: '';
 
@@ -1028,10 +1172,6 @@
 }
 
 
-/* =========================
-   CARD HOVER
-========================= */
-
 .project-detail__stack-item:hover {
     transform:
         translateY(-7px);
@@ -1048,24 +1188,9 @@
 }
 
 
-.project-detail__stack-item:hover::before {
-    opacity: 1;
-
-    transform:
-        translateX(-50%) scale(1.2);
-}
-
-
-.project-detail__stack-item:hover::after {
-    width: 70%;
-
-    opacity: 0.9;
-}
-
-
-/* =========================
+/* ==================================================
    TECHNOLOGY ICON
-========================= */
+================================================== */
 
 .project-detail__stack-icon {
     position: relative;
@@ -1120,10 +1245,6 @@
 }
 
 
-/* =========================
-   ICON HOVER
-========================= */
-
 .project-detail__stack-item:hover .project-detail__stack-icon {
     transform:
         translateY(-2px) scale(1.06);
@@ -1137,11 +1258,6 @@
         color-mix(in srgb,
             var(--technology-color) 13%,
             var(--project-background));
-
-    box-shadow:
-        0 12px 30px color-mix(in srgb,
-            var(--technology-color) 12%,
-            transparent);
 }
 
 
@@ -1151,9 +1267,9 @@
 }
 
 
-/* =========================
-   SCROLLTRIGGER BADGE
-========================= */
+/* ==================================================
+   TECHNOLOGY BADGE
+================================================== */
 
 .project-detail__stack-icon-badge {
     position: absolute;
@@ -1186,15 +1302,12 @@
         3px solid var(--project-background);
 
     border-radius: 999px;
-
-    box-shadow:
-        0 3px 10px rgba(0, 0, 0, 0.18);
 }
 
 
-/* =========================
+/* ==================================================
    TECHNOLOGY NAME
-========================= */
+================================================== */
 
 .project-detail__stack-name {
     position: relative;
@@ -1210,21 +1323,38 @@
     line-height: 1.2;
 
     letter-spacing: -0.01em;
-
-    transition:
-        transform 0.35s ease;
 }
 
 
-.project-detail__stack-item:hover .project-detail__stack-name {
-    transform:
-        translateY(1px);
+/* ==================================================
+   KYRA STACK
+================================================== */
+
+.project-detail--kyra .project-detail__stack {
+    background:
+        linear-gradient(180deg,
+            #edf5fb 0%,
+            #f7fbfe 100%);
 }
 
 
-/* =========================
+.project-detail--kyra .project-detail__stack-item {
+    background:
+        linear-gradient(145deg,
+            #ffffff,
+            #f1f7fc);
+
+    border-color:
+        rgba(23, 96, 154, 0.12);
+
+    box-shadow:
+        0 16px 42px rgba(15, 63, 104, 0.07);
+}
+
+
+/* ==================================================
    XENOM STACK
-========================= */
+================================================== */
 
 .project-detail--xenom .project-detail__stack {
     background:
@@ -1242,44 +1372,12 @@
 
     border-color:
         rgba(255, 255, 255, 0.075);
-
-    box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.18);
 }
 
 
-.project-detail--xenom .project-detail__stack-item:hover {
-    border-color:
-        color-mix(in srgb,
-            var(--technology-color) 30%,
-            rgba(255, 255, 255, 0.06));
-
-    box-shadow:
-        0 24px 55px rgba(0, 0, 0, 0.32),
-
-        0 0 35px color-mix(in srgb,
-            var(--technology-color) 6%,
-            transparent);
-}
-
-
-.project-detail--xenom .project-detail__stack-icon {
-    background:
-        color-mix(in srgb,
-            var(--technology-color) 10%,
-            #0b0d0f);
-}
-
-
-.project-detail--xenom .project-detail__stack-icon-badge {
-    border-color:
-        #0b0d0f;
-}
-
-
-/* =========================
+/* ==================================================
    HALAL STACK
-========================= */
+================================================== */
 
 .project-detail--halal .project-detail__stack-item {
     background:
@@ -1289,9 +1387,9 @@
 }
 
 
-/* =========================
+/* ==================================================
    CRISTOUNE STACK
-========================= */
+================================================== */
 
 .project-detail--cristoune .project-detail__stack-item {
     background:
@@ -1326,28 +1424,13 @@
 }
 
 
-/* =========================
-   XENOM CTA
-========================= */
-
 .project-detail--xenom .project-detail__cta-box {
     background:
         linear-gradient(135deg,
-            #121416 0%,
-            #17191c 60%,
-            #1b1113 100%);
-
-    border:
-        1px solid rgba(255, 255, 255, 0.06);
-
-    box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.28);
+            #121416,
+            #1b1113);
 }
 
-
-/* =========================
-   HALAL CTA
-========================= */
 
 .project-detail--halal .project-detail__cta-box {
     background:
@@ -1355,19 +1438,23 @@
 }
 
 
-/* =========================
-   CRISTOUNE CTA
-========================= */
-
 .project-detail--cristoune .project-detail__cta-box {
     background:
         #4d3851;
 }
 
 
-/* =========================
-   CTA LABEL
-========================= */
+.project-detail--kyra .project-detail__cta-box {
+    background:
+        linear-gradient(135deg,
+            #102c47 0%,
+            #123e63 55%,
+            #17609a 100%);
+
+    box-shadow:
+        0 30px 80px rgba(15, 63, 104, 0.18);
+}
+
 
 .project-detail__cta-box>span {
     color:
@@ -1381,10 +1468,6 @@
     text-transform: uppercase;
 }
 
-
-/* =========================
-   CTA TITLE
-========================= */
 
 .project-detail__cta-box h2 {
     max-width: 850px;
@@ -1405,10 +1488,6 @@
 }
 
 
-/* =========================
-   CTA DESCRIPTION
-========================= */
-
 .project-detail__cta-box p {
     max-width: 480px;
 
@@ -1420,10 +1499,6 @@
     line-height: 1.7;
 }
 
-
-/* =========================
-   CTA BUTTON
-========================= */
 
 .project-detail__cta-link {
     display: inline-flex;
@@ -1448,11 +1523,6 @@
 
     border-radius: 11px;
 
-    box-shadow:
-        0 12px 30px color-mix(in srgb,
-            var(--project-accent) 25%,
-            transparent);
-
     transition:
         transform var(--transition-normal),
         box-shadow var(--transition-normal);
@@ -1474,27 +1544,6 @@
    DARK MODE
 ================================================== */
 
-.project-detail,
-.project-detail__hero-background,
-.project-detail__features,
-.project-detail__stack,
-.project-detail__feature,
-.project-detail__browser,
-.project-detail__browser-top,
-.project-detail__stack-item {
-    transition:
-        background-color 0.35s ease,
-        background 0.35s ease,
-        border-color 0.35s ease,
-        color 0.35s ease,
-        box-shadow 0.35s ease;
-}
-
-
-/* =========================
-   DEFAULT DARK
-========================= */
-
 html[data-theme="dark"] .project-detail {
     --project-background: #060b14;
     --project-surface: #0d1726;
@@ -1502,10 +1551,6 @@ html[data-theme="dark"] .project-detail {
     --project-soft: #9aa8bb;
 }
 
-
-/* =========================
-   XENOM DARK
-========================= */
 
 html[data-theme="dark"] .project-detail--xenom {
     --project-accent: #e12a34;
@@ -1518,21 +1563,6 @@ html[data-theme="dark"] .project-detail--xenom {
 }
 
 
-html[data-theme="dark"] .project-detail--xenom .project-detail__hero-background {
-    background:
-        radial-gradient(circle at 75% 25%,
-            rgba(225, 42, 52, 0.14),
-            transparent 30%),
-        linear-gradient(180deg,
-            #050607,
-            #080a0c);
-}
-
-
-/* =========================
-   HALAL FOOD CAEN DARK
-========================= */
-
 html[data-theme="dark"] .project-detail--halal {
     --project-accent: #e0ad35;
 
@@ -1543,99 +1573,6 @@ html[data-theme="dark"] .project-detail--halal {
     --project-soft: #b8aa98;
 }
 
-
-html[data-theme="dark"] .project-detail--halal .project-detail__hero-background {
-    background:
-        radial-gradient(circle at 75% 25%,
-            rgba(224, 173, 53, 0.14),
-            transparent 32%),
-        linear-gradient(180deg,
-            #100d09,
-            #151008);
-}
-
-
-html[data-theme="dark"] .project-detail--halal .project-detail__browser {
-    border-color:
-        rgba(224, 173, 53, 0.14);
-
-    box-shadow:
-        0 50px 130px rgba(0, 0, 0, 0.34);
-}
-
-
-html[data-theme="dark"] .project-detail--halal .project-detail__browser-top {
-    border-bottom-color:
-        rgba(255, 255, 255, 0.07);
-}
-
-
-html[data-theme="dark"] .project-detail--halal .project-detail__browser-screen,
-
-html[data-theme="dark"] .project-detail--halal .project-detail__gallery-image {
-    background:
-        #fffaf1;
-}
-
-
-html[data-theme="dark"] .project-detail--halal .project-detail__feature {
-    border-color:
-        rgba(224, 173, 53, 0.12);
-}
-
-
-html[data-theme="dark"] .project-detail--halal .project-detail__gallery-image {
-    box-shadow:
-        0 35px 90px rgba(0, 0, 0, 0.28);
-}
-
-
-html[data-theme="dark"] .project-detail--halal .project-detail__stack-item {
-    background:
-        linear-gradient(145deg,
-            #19140e,
-            #110e0a);
-
-    border-color:
-        rgba(224, 173, 53, 0.1);
-
-    box-shadow:
-        0 16px 42px rgba(0, 0, 0, 0.2);
-}
-
-
-html[data-theme="dark"] .project-detail--halal .project-detail__stack-item:hover {
-    border-color:
-        color-mix(in srgb,
-            var(--technology-color) 32%,
-            rgba(224, 173, 53, 0.08));
-
-    box-shadow:
-        0 24px 55px rgba(0, 0, 0, 0.3),
-
-        0 0 34px color-mix(in srgb,
-            var(--technology-color) 6%,
-            transparent);
-}
-
-
-html[data-theme="dark"] .project-detail--halal .project-detail__stack-icon {
-    background:
-        color-mix(in srgb,
-            var(--technology-color) 10%,
-            #17120c);
-}
-
-
-html[data-theme="dark"] .project-detail--halal .project-detail__stack-icon-badge {
-    border-color:
-        #17120c;
-}
-
-
-/* =========================
-   CRISTOUNE CRÉATION DARK
-========================= */
 
 html[data-theme="dark"] .project-detail--cristoune {
     --project-accent: #c59bd8;
@@ -1648,137 +1585,100 @@ html[data-theme="dark"] .project-detail--cristoune {
 }
 
 
-html[data-theme="dark"] .project-detail--cristoune .project-detail__hero-background {
-    background:
-        radial-gradient(circle at 75% 25%,
-            rgba(197, 155, 216, 0.15),
-            transparent 32%),
-        linear-gradient(180deg,
-            #120d14,
-            #19111c);
+html[data-theme="dark"] .project-detail--kyra {
+    --project-accent: #4c9bd1;
+    --project-accent-dark: #327caf;
+
+    --project-background: #07121e;
+    --project-surface: #0d1b2a;
+
+    --project-text: #f3f8fc;
+    --project-soft: #9aafc1;
 }
 
 
-html[data-theme="dark"] .project-detail--cristoune .project-detail__browser {
+/* ==================================================
+   DARK HERO — KYRA
+================================================== */
+
+html[data-theme="dark"] .project-detail--kyra .project-detail__hero-background {
+    background:
+        radial-gradient(circle at 78% 20%,
+            rgba(76, 155, 209, 0.15),
+            transparent 34%),
+        linear-gradient(180deg,
+            #07121e 0%,
+            #091725 50%,
+            #0b1928 100%);
+}
+
+
+html[data-theme="dark"] .project-detail--kyra .project-detail__browser {
     border-color:
-        rgba(197, 155, 216, 0.14);
+        rgba(76, 155, 209, 0.16);
 
     box-shadow:
         0 50px 130px rgba(0, 0, 0, 0.34);
 }
 
 
-html[data-theme="dark"] .project-detail--cristoune .project-detail__browser-top {
-    border-bottom-color:
-        rgba(255, 255, 255, 0.07);
+/*
+   Les captures restent claires même en dark mode,
+   puisque ce sont les vrais screenshots du site.
+*/
+
+html[data-theme="dark"] .project-detail--kyra .project-detail__browser-screen,
+
+html[data-theme="dark"] .project-detail--kyra .project-detail__gallery-image {
+    background:
+        #edf5fb;
 }
 
 
-/*
- * Les captures restent sur leur fond ivoire
- * afin de respecter le véritable site CrisToune.
- */
+html[data-theme="dark"] .project-detail--kyra .project-detail__stack {
+    background:
+        linear-gradient(180deg,
+            #0a1724,
+            #07121e);
+}
+
+
+html[data-theme="dark"] .project-detail--kyra .project-detail__stack-item {
+    background:
+        linear-gradient(145deg,
+            #101f2e,
+            #0b1724);
+
+    border-color:
+        rgba(76, 155, 209, 0.11);
+}
+
+
+html[data-theme="dark"] .project-detail--kyra .project-detail__cta-box {
+    background:
+        linear-gradient(135deg,
+            #0c263d,
+            #15537d);
+}
+
+
+/* ==================================================
+   DARK — HALAL / CRISTOUNE SCREENSHOTS
+================================================== */
+
+html[data-theme="dark"] .project-detail--halal .project-detail__browser-screen,
+
+html[data-theme="dark"] .project-detail--halal .project-detail__gallery-image {
+    background:
+        #fffaf1;
+}
+
 
 html[data-theme="dark"] .project-detail--cristoune .project-detail__browser-screen,
 
 html[data-theme="dark"] .project-detail--cristoune .project-detail__gallery-image {
     background:
         #fbf7f2;
-}
-
-
-html[data-theme="dark"] .project-detail--cristoune .project-detail__feature {
-    border-color:
-        rgba(197, 155, 216, 0.12);
-}
-
-
-html[data-theme="dark"] .project-detail--cristoune .project-detail__gallery-image {
-    box-shadow:
-        0 35px 90px rgba(0, 0, 0, 0.28);
-}
-
-
-html[data-theme="dark"] .project-detail--cristoune .project-detail__stack-item {
-    background:
-        linear-gradient(145deg,
-            #1d1520,
-            #140f17);
-
-    border-color:
-        rgba(197, 155, 216, 0.1);
-
-    box-shadow:
-        0 16px 42px rgba(0, 0, 0, 0.2);
-}
-
-
-html[data-theme="dark"] .project-detail--cristoune .project-detail__stack-item:hover {
-    border-color:
-        color-mix(in srgb,
-            var(--technology-color) 32%,
-            rgba(197, 155, 216, 0.08));
-
-    box-shadow:
-        0 24px 55px rgba(0, 0, 0, 0.3),
-
-        0 0 34px color-mix(in srgb,
-            var(--technology-color) 6%,
-            transparent);
-}
-
-
-html[data-theme="dark"] .project-detail--cristoune .project-detail__stack-icon {
-    background:
-        color-mix(in srgb,
-            var(--technology-color) 10%,
-            #1a121d);
-}
-
-
-html[data-theme="dark"] .project-detail--cristoune .project-detail__stack-icon-badge {
-    border-color:
-        #1a121d;
-}
-
-
-/* =========================
-   SHARED DARK DETAILS
-========================= */
-
-html[data-theme="dark"] .project-detail__secondary-button {
-    background:
-        color-mix(in srgb,
-            var(--project-surface) 72%,
-            transparent);
-}
-
-
-html[data-theme="dark"] .project-detail__secondary-button:hover {
-    background:
-        color-mix(in srgb,
-            var(--project-accent) 10%,
-            var(--project-surface));
-}
-
-
-html[data-theme="dark"] .project-detail__role {
-    border-top-color:
-        color-mix(in srgb,
-            var(--project-text) 10%,
-            transparent);
-}
-
-
-html[data-theme="dark"] .project-detail__feature {
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.02);
-}
-
-
-html[data-theme="dark"] .project-detail__cta-box {
-    box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.24);
 }
 
 
@@ -1855,10 +1755,6 @@ html[data-theme="dark"] .project-detail__cta-box {
 
 @media (max-width: 768px) {
 
-    /* =====================
-       HERO
-    ===================== */
-
     .project-detail__hero {
         min-height: auto;
 
@@ -1903,10 +1799,6 @@ html[data-theme="dark"] .project-detail__cta-box {
     }
 
 
-    /* =====================
-       BROWSER
-    ===================== */
-
     .project-detail__browser {
         border-radius: 16px;
     }
@@ -1935,10 +1827,6 @@ html[data-theme="dark"] .project-detail__cta-box {
     }
 
 
-    /* =====================
-       SECTIONS
-    ===================== */
-
     .project-detail__overview,
     .project-detail__features,
     .project-detail__gallery,
@@ -1957,10 +1845,6 @@ html[data-theme="dark"] .project-detail__cta-box {
     }
 
 
-    /* =====================
-       OVERVIEW
-    ===================== */
-
     .project-detail__overview-copy {
         padding-top: 0;
     }
@@ -1975,10 +1859,6 @@ html[data-theme="dark"] .project-detail__cta-box {
         margin-top: 65px;
     }
 
-
-    /* =====================
-       FEATURES
-    ===================== */
 
     .project-detail__section-header {
         grid-template-columns:
@@ -2014,10 +1894,6 @@ html[data-theme="dark"] .project-detail__cta-box {
     }
 
 
-    /* =====================
-       GALLERY
-    ===================== */
-
     .project-detail__gallery-list {
         gap: 85px;
     }
@@ -2051,10 +1927,6 @@ html[data-theme="dark"] .project-detail__cta-box {
         text-align: left;
     }
 
-
-    /* =====================
-       STACK
-    ===================== */
 
     .project-detail__stack-wrapper {
         gap: 40px;
@@ -2114,10 +1986,6 @@ html[data-theme="dark"] .project-detail__cta-box {
         right: -220px;
     }
 
-
-    /* =====================
-       CTA
-    ===================== */
 
     .project-detail__cta {
         padding:
@@ -2194,4 +2062,43 @@ html[data-theme="dark"] .project-detail__cta-box {
             0.01ms !important;
     }
 
+}
+
+/* KYRA RENOV */
+.project-showcase--kyra {
+    --project-accent: #17609a;
+    --project-accent-dark: #0f3f68;
+    --project-bg: #edf5fb;
+    --project-border: rgba(23, 96, 154, 0.14);
+}
+
+/* Fond de la page */
+.project-page:has(.project-showcase--kyra) {
+    background:
+        radial-gradient(circle at 75% 20%,
+            rgba(23, 96, 154, 0.10),
+            transparent 32%),
+        linear-gradient(180deg,
+            #f4f9fd 0%,
+            #edf5fb 45%,
+            #f7fbfe 100%);
+}
+
+/* Suppression des bordures blanches */
+.project-showcase--kyra .project-browser__viewport {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    background: #0d1b2a;
+}
+
+.project-showcase--kyra .project-browser__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: none;
+    object-fit: cover;
+    object-position: top center;
+    border: 0;
+    outline: 0;
 }
